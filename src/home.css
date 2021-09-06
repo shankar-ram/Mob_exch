@@ -1,0 +1,192 @@
+.items{
+    padding-right: 50px;
+}
+
+ .nav-btn:hover {
+    background-color:#986D8E;
+}
+
+ .nav-btn {
+    background-color: white;
+}
+
+.lot{
+    
+
+    /* margin-top: 3rem;
+    width:60%;
+    border-radius: 0 50% 20% 20%;
+    margin-bottom:3rem; */
+    
+    width: 70%;
+    height:72%;
+    border-radius: 0 50% 20% 20%;
+    
+    margin-bottom:3rem;
+}
+
+.reg-btn {
+    background-color:#986D8E;
+    color:whitesmoke;
+    margin:1rem 0 2rem;
+    width:70%;
+    padding:0.5rem 0;
+}
+
+.reg-btn:hover{
+    background-color: #E4D8DC;
+}
+footer{
+    background-color:#E4D8DC;
+    font-weight: bold;
+}
+
+footer .text-reset{
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+
+footer .contact{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+#features,#gstarted{
+    
+    padding:7% 15%;
+    background-color: #E4D8DC;
+    position:relative;
+    
+}
+
+#gstarted{
+    background-color: #200F21;
+    text-align: center;
+}
+
+
+#gstarted h4{
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+#gstarted p{
+    font-size: 1.2rem;
+    margin-left:1rem;
+    text-align: center;
+    color:white;
+    font-weight: lighter;
+}
+
+.feature-title{
+    font-weight:normal;
+    font-size:2rem ;
+
+}  
+
+.addtn-feat{
+    margin-top: 10%;
+    text-align: center;
+    
+}
+
+.addtn-feat h4{
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+.addtn-feat p{
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+
+.feature-box{
+    padding: 4.5%;
+    text-align: left;
+}
+
+.gstarted-box{
+    padding-top: 4.5%;
+
+    text-align: center;
+}
+
+.feature-text{
+    text-align: center;
+   
+}
+
+.feature-text h2{
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.feature-text h4{
+    
+    line-height: 1.5;
+    color:black;
+
+}
+
+.frustrated{
+    background-color: #EFB7B7;
+    width: 110%;
+    padding:0 1.5rem 0 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.happy{
+    background-color:#96BAFF;
+    /* width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    margin-bottom: 1rem; */
+
+    width: 110%;
+    padding:0 1.3rem 0 1.3rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+   
+}
+
+.points .content {
+    margin-left:10px;
+    margin-top:13px;
+
+   
+}
+
+.points .content h6{
+    font-size: 1.2rem;
+    color:black;
+    font-weight: lighter;
+}
+
+ .info h6{
+    margin-left:25px;
+}
+
+.coin-rate{
+    margin-left:2rem;
+}
+
+.arrow{
+  margin-top:-0.8rem;
+
+}
+
+.year{
+    margin-left:3.7rem;
+}
+
+.year h6{
+    font-weight: normal;
+}
