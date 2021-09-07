@@ -3728,184 +3728,184 @@ setmobile_port(false)
 <Card style={{display:parseFloat(localStorage.getItem("BTC_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
       
-      <CardTitle style={{textAlign:"center"}} tag="h3"><img style={{height:"10px",width:"10px"}} src={logobtc}></img> BITCOIN<br/><div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("BTC_Coins")} BTC</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}} tag="h3"><img style={{width:"30px"}} src={logobtc}></img> BITCOIN<br/><div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("BTC_Coins")} BTC</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("BNB_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"><img  src={bnb}/>    BNB <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("BNB_Coins")} BNB</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"><img style={{width:"30px"}} src={bnb}/>    BNB <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("BNB_Coins")} BNB</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("ETH_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
       
-      <CardTitle style={{textAlign:"center"}}  tag="h3"><img src={eth}/>    ETHEREUM <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ETH_Coins")} ETH</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"><img style={{width:"30px"}} src={eth}/>    ETHEREUM <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ETH_Coins")} ETH</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("USDT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
       
-      <CardTitle style={{textAlign:"center"}}  tag="h3"><img height="30rem" src={usdt}/>    USDT <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("USDT_Coins")} USDT</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"><img style={{width:"30px"}} src={usdt}/>    USDT <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("USDT_Coins")} USDT</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("INRD_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={ruppee}/>    INRD <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("INRD_Coins")} INRD</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ruppee}/>    INRD <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("INRD_Coins")} INRD</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("KSM_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={ksm}/>    KUSAMA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("KSM_Coins")} KSM</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ksm}/>    KUSAMA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("KSM_Coins")} KSM</div></CardTitle>
     </CardBody>
   </Card>  
   <Card style={{display:parseFloat(localStorage.getItem("ATA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={ata}/>    AUTOMATA NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ATA_Coins")} ATA</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ata}/>    AUTOMATA NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ATA_Coins")} ATA</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("MANA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={mana}/>   DECENTRALAND  <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("MANA_Coins")} MANA</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={mana}/>   DECENTRALAND  <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("MANA_Coins")} MANA</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("DGB_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={dgb}/>    DIGIBYTE <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("DGB_Coins")} DGB</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={dgb}/>    DIGIBYTE <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("DGB_Coins")} DGB</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("FTM_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={ftm}/>    FANTOM <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FTM_Coins")} FTM</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ftm}/>    FANTOM <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FTM_Coins")} FTM</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("ALICE_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={alice}/>    MY NEIGHBOR ALICE <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ALICE_Coins")} ALICE</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={alice}/>    MY NEIGHBOR ALICE <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ALICE_Coins")} ALICE</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("GTC_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={gtc}/>    GITCOIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("GTC_Coins")} GTC</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={gtc}/>    GITCOIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("GTC_Coins")} GTC</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("MATIC_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={matic}/>    MATIC NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("MATIC_Coins")} MATIC</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={matic}/>    MATIC NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("MATIC_Coins")} MATIC</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("AXS_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={axs}/>    AXIE INFINITY <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("AXS_Coins")} AXS</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={axs}/>    AXIE INFINITY <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("AXS_Coins")} AXS</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("FTT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={ftt}/>    FTX TOKEN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FTT_Coins")} FTT</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ftt}/>    FTX TOKEN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FTT_Coins")} FTT</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("SOL_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={sol}/>    SOLANA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("SOL_Coins")} SOL</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={sol}/>    SOLANA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("SOL_Coins")} SOL</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("RUNE_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={rune}/>   THORCHAIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("RUNE_Coins")} RUNE</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={rune}/>   THORCHAIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("RUNE_Coins")} RUNE</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("UNI_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={uni}/>    UNISWAP <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("UNI_Coins")} UNI</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={uni}/>    UNISWAP <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("UNI_Coins")} UNI</div></CardTitle>
     </CardBody>
   </Card>  
 
   <Card style={{display:parseFloat(localStorage.getItem("DOT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={dot}/>    POLKADOT <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("DOT_Coins")} DOT</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={dot}/>    POLKADOT <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("DOT_Coins")} DOT</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("VET_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={vet}/>    VECHAIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("VET_Coins")} VET</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={vet}/>    VECHAIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("VET_Coins")} VET</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("TFUEL_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={tfuel}/>    THETA FUEL <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("TFUEL_Coins")} TFUEL</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={tfuel}/>    THETA FUEL <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("TFUEL_Coins")} TFUEL</div></CardTitle>
     </CardBody>
   </Card>  
 
   <Card style={{display:parseFloat(localStorage.getItem("GRT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={grt}/>    THE GRAPH <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("GRT_Coins")} GRT</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={grt}/>    THE GRAPH <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("GRT_Coins")} GRT</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("ADA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={ada}/>    CARDANO <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ADA_Coins")} ADA</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ada}/>    CARDANO <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ADA_Coins")} ADA</div></CardTitle>
     </CardBody>
   </Card>  
 
   <Card style={{display:parseFloat(localStorage.getItem("FIL_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={fil}/>    FILECOIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FIL_Coins")} FIL</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={fil}/>    FILECOIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FIL_Coins")} FIL</div></CardTitle>
     </CardBody>
   </Card>
 
   <Card style={{display:parseFloat(localStorage.getItem("LINK_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={link}/>    CHAINLINK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("LINK_Coins")} LINK</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={link}/>    CHAINLINK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("LINK_Coins")} LINK</div></CardTitle>
     </CardBody>
   </Card>
 
   <Card style={{display:parseFloat(localStorage.getItem("LUNA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={luna}/>    TERRA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("LUNA_Coins")} LUNA</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={luna}/>    TERRA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("LUNA_Coins")} LUNA</div></CardTitle>
     </CardBody>
   </Card>
 
   <Card style={{display:parseFloat(localStorage.getItem("THETA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={theta}/>    THETA NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("THETA_Coins")} THETA</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={theta}/>    THETA NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("THETA_Coins")} THETA</div></CardTitle>
     </CardBody>
   </Card>  
     
@@ -3914,7 +3914,7 @@ setmobile_port(false)
   <Card style={{display:parseFloat(localStorage.getItem("ANTEAG_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img height="30rem" src={logo} style={{backgroundColor:"white",borderRadius:"20px"}}/>    ANTEAG <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ANTEAG_Coins")} ANTEAG</div></CardTitle>
+      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={logo} style={{backgroundColor:"white",borderRadius:"20px"}}/>    ANTEAG <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ANTEAG_Coins")} ANTEAG</div></CardTitle>
     </CardBody>
   </Card>
      
