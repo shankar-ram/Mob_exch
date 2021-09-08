@@ -3789,7 +3789,7 @@ anteagle_pro ?
     }}></Input>
 
 
-    <Button disabled={!valid} onClick={()=>{
+    <Button disabled={!valid} style={{marginTop:"1rem"}} className="btn btn-success" onClick={()=>{
       axios({
         method:"POST",
         url:"https://api.anteagle.tech/neworder",    
@@ -3953,7 +3953,7 @@ anteagle_pro ?
      }
       
     }}></Input>
-    <Button disabled={!valid_s} onClick={()=>{
+    <Button disabled={!valid_s} style={{marginTop:"1rem"}} className="btn btn-dark" onClick={()=>{
       axios({
         method:"POST",
         url:"https://api.anteagle.tech/neworder",
