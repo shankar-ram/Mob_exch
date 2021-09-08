@@ -552,86 +552,136 @@ const [allorder,setallorders] = React.useState([])
     for(let i=0;i<g.length;i++){
       if(g[i]["s"] == "BTCUSDT"){
        setlive_BTC(parseFloat(g[i]["c"]).toFixed(2))
+       const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+       setBTC_per(temp)
        
       }
       if(g[i]["s"] == "BNBUSDT"){
         setlive_BNB(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setBNB_per(temp)
        
       }
       if(g[i]["s"] == "ETHUSDT"){
         setlive_ETH(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setETH_per(temp)
        
       }
       if(g[i]["s"]=="KSMUSDT"){
         setlive_KSM(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setKSM_per(temp)
       }
       if(g[i]["s"]=="ATAUSDT"){
         setlive_ATA(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setATA_per(temp)
       }
       if(g[i]["s"]=="MANAUSDT"){
         setlive_MANA(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setMANA_per(temp)
       }
       if(g[i]["s"]=="FTMUSDT"){
         setlive_FTM(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setFTM_per(temp)
       }
       if(g[i]["s"]=="DGBUSDT"){
         setlive_DGB(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setDGB_per(temp)
       }
       if(g[i]["s"]=="ALICEUSDT"){
         setlive_ALICE(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setALICE_per(temp)
       }
       if(g[i]["s"]=="GTCUSDT"){
         setlive_GTC(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setGTC_per(temp)
       }
       if(g[i]["s"]=="MATICUSDT"){
         setlive_MATIC(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setMATIC_per(temp)
       }
       if(g[i]["s"]=="AXSUSDT"){
         setlive_AXS(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setAXS_per(temp)
       }
       if(g[i]["s"]=="FTTUSDT"){
         setlive_FTT(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setFTT_per(temp)
       }
       if(g[i]["s"]=="SOLUSDT"){
         setlive_SOL(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setSOL_per(temp)
       }
       if(g[i]["s"]=="RUNEUSDT"){
         setlive_RUNE(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setRUNE_per(temp)
       }
       if(g[i]["s"]=="UNIUSDT"){
         setlive_UNI(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setUNI_per(temp)
       }
       if(g[i]["s"]=="DOTUSDT"){
         setlive_DOT(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setDOT_per(temp)
       }
       if(g[i]["s"]=="VETUSDT"){
         setlive_VET(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setVET_per(temp)
       }
       if(g[i]["s"]=="TFUELUSDT"){
         setlive_TFUEL(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setTFUEL_per(temp)
       }
       if(g[i]["s"]=="GRTUSDT"){
         setlive_GRT(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setGRT_per(temp)
       }
       if(g[i]["s"]=="ADAUSDT"){
         setlive_ADA(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setADA_per(temp)
       }
       if(g[i]["s"]=="FILUSDT"){
         setlive_FIL(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setFIL_per(temp)
       }
       if(g[i]["s"]=="LINKUSDT"){
         setlive_LINK(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setLINK_per(temp)
       }
       if(g[i]["s"]=="LUNAUSDT"){
         setlive_LUNA(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setLUNA_per(temp)
       }
       if(g[i]["s"]=="THETAUSDT"){
         setlive_THETA(parseFloat(g[i]["c"]).toFixed(2))
+        const temp = parseFloat(((g[i]["c"] - g[i]["o"])/g[i]["o"])*100).toFixed(2)
+        setTHETA_per(temp)
       }
   
   
     }
-  }  
+  }
   const handleWindowSizeChange = () => {
     setwidth(window.innerWidth)
   };
@@ -3692,7 +3742,255 @@ anteagle_pro ?
  
         
  <>
+ <Dialog open={show_buy} onClose={()=>{
+  setshow_buy(false)
+}} >
+  
+  
 
+ <Form style={{padding:"20px"}}>
+  <CardHeader styke={{fontWeight:"bold"}}>BALANCE : {localStorage.getItem(`${mobileswitch1 ? 'USDT' : 'INRD'}_Coins`)} {`${mobileswitch1 ? 'USDT' : 'INRD'}`}</CardHeader>
+    <Label style={{color:"black",fontWeight:"bold"}}>Price</Label>
+    <Input value={liveprice} disabled={true} style={{color:"white"}} onChange={(event)=>{
+      setbuy_limit_price(parseFloat(event.target.value) )
+
+    }} placeholder={`ENTER PRICE in ${pair.substr(pair.indexOf('/')+1,pair.length)}`}></Input>
+
+
+
+<Label style={{color:"black",fontWeight:"bold"}}>Enter Amount</Label>
+   <Input invalid={!valid} style={{color : 'black'}} placeholder={`Enter AMOUNT in ${pair.substr(pair.indexOf('/')+1,pair.length)}`} onChange={(event)=>{
+      const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}_Coins`
+      
+     if(parseFloat(event.target.value)>parseFloat(localStorage.getItem(curr))){
+        setvalid(false)
+     }
+     else{
+      setvalid(true)
+    
+      setbuy_limit_amount(parseFloat(parseFloat(event.target.value) /parseFloat(liveprice)) )
+     }
+      
+    }}></Input>
+
+    <Label style={{color:"black",fontWeight:"bold"}}>You will recieve</Label>
+   
+    
+    <Input invalid={!valid} style={{color:"white"}} placeholder={`ENTER AMOUNT in ${pair.substr(0,pair.indexOf('/'))}`} disabled={true} value={buy_limit_amount} onChange={(event)=>{
+      const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}_Coins`
+     if(parseFloat(event.target.value*buy_limit_price)>parseFloat(localStorage.getItem(curr))){
+      setvalid(false)
+     }
+     else{
+      setvalid(true)
+      // setlimit_buy_total(parseFloat(event.target.value)*parseFloat(buy_limit_price))
+     }
+      
+    }}></Input>
+
+
+    <Button disabled={!valid} onClick={()=>{
+      axios({
+        method:"POST",
+        url:"https://api.anteagle.tech/neworder",    
+        headers:{
+          "Accept": "application/json, text/plain, */*", // It can be used to overcome cors errors
+          "Content-Type": "application/json",
+          Authtoken:"sfsfsff"
+        },
+        data: JSON.stringify({
+          userid : localStorage.getItem("userid"),
+          date: "2021-06-21",
+          pair: pair,
+          type : "Limit",
+          side : "BUY",
+          price : liveprice,
+          Amount : buy_limit_amount,
+          filled : "0.0",
+          total : liveprice * buy_limit_amount
+        }),
+      }).then(res=>{
+        const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}`
+        //console.log(parseFloat(localStorage.getItem(`${curr}_Coins`)) - liveprice*buy_limit_amount)
+        const end = parseFloat(localStorage.getItem(`${curr}_Coins`)) - liveprice*buy_limit_amount;
+        const range=-9999;                                     //add range
+        if( end < 0 && end > range){
+          alert("Are you sure that you want to proceed further?");
+          var te = parseFloat(localStorage.getItem(`${curr}_Debt`));
+          if(te === null){
+            te = 0;
+          }
+          localStorage.setItem(`${curr}_Coins`,end);
+          localStorage.setItem(`${curr}_Debt `,end+te);        //set debt
+          //console.log("The debt is "+end+te);
+        }
+         
+        else if(end<range) alert("Cannot go beyond this range"); 
+        else{
+          localStorage.setItem(`${curr}_Coins`,end)
+          
+        }
+  
+        axios({
+          method:"post",
+          url : `https://api.anteagle.tech/get${curr.toLowerCase()}?coins=${end}&userid=${localStorage.getItem("userid")}`,
+          headers:{
+            "Accept": "application/json",
+          }
+        }).then(res=>{
+          swal("Success","Order Submitted Successfully","success");window.location.href = "/"
+        })
+      })
+    
+      // if(pair[pair.length-1] == 'T'){
+      //   axios({
+      //     method:"POST",
+      //     url:"https://api.anteagle.tech/neworder",
+      //     headers:{
+      //       "Accept": "application/json, text/plain, */*", // It can be used to overcome cors errors
+      //       "Content-Type": "application/json",
+      //       Authtoken:"sfsfsff"
+      //     },
+      //     data: JSON.stringify({
+      //       userid : localStorage.getItem("userid"),
+      //       date: "2021-06-21",
+      //       pair: pair.replace("USDT","INRD"),
+      //       type : "Limit",
+      //       side : "BUY",
+      //       price : liveprice,
+      //       Amount : buy_limit_amount,
+      //       filled : "0.0",
+      //       total : liveprice*buy_limit_amount
+      //     }),
+      //   }).then(res=>{console.log(res.data);swal("Success","Order Submitted Successfully","success");window.location.href = "/"})
+      // }
+      // else{
+      //   axios({
+      //     method:"POST",
+      //     url:"https://api.anteagle.tech/neworder",
+      //     headers:{
+      //       "Accept": "application/json, text/plain, */*", // It can be used to overcome cors errors
+      //       "Content-Type": "application/json",
+      //       Authtoken:"sfsfsff"
+      //     },
+      //     data: JSON.stringify({
+      //       userid : localStorage.getItem("userid"),
+      //       date: "2021-06-21",
+      //       pair: pair.replace("INRD","USDT"),
+      //       type : "Limit",
+      //       side : "BUY",
+      //       price : liveprice,
+      //       Amount : buy_limit_amount,
+      //       filled : "0.0",
+      //       total : (liveprice)*buy_limit_amount
+      //     }),
+      //   }).then(res=>{console.log(res.data);swal("Success","Order Submitted Successfully","success");window.location.href = "/"})
+      // }
+
+      
+     
+    }}>Submit</Button>
+    </Form>
+
+</Dialog>
+
+
+<Dialog open={show_sell} onClose={()=>{
+  setshow_sell(false)
+}} >
+  <Form style={{padding:"20px"}}>
+  <CardText style={{color : "black",fontWeight:"bold"}}>BALANCE : {localStorage.getItem(`${pair.substring(0,pair.lastIndexOf('/'))}_Coins`)} {pair.substring(0,pair.lastIndexOf('/'))}</CardText>
+
+    <Label style={{color:"black",fontWeight:"bold"}}>Price</Label>
+    <Input placeholder={`ENTER PRICE in ${pair.substr(pair.indexOf('/')+1,pair.length)}`} value={liveprice} disabled={true} style={{color : "white"}} onChange={(event)=>{
+      setsell_limit_price(parseFloat(event.target.value))
+    }}></Input>
+    <Label style={{color:"black",fontWeight:"bold"}}>Amount</Label>
+    <Input style={{color:"black"}} invalid={!valid_s} placeholder={`ENTER AMOUNT in ${pair.substr(0,pair.indexOf('/'))}`} value={sell_limit_amount} onChange={(event)=>{
+      const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}_Coins`
+      if(parseFloat(event.target.value) > parseFloat(localStorage.getItem(curr))){
+        setvalid_s(false)
+      }
+      else{
+        setvalid_s(true)
+        setsell_limit_amount(parseFloat(event.target.value))
+      }
+      
+    }} ></Input>
+ <Slider
+        defaultValue={30}
+        getAriaValueText={(value)=>{
+          const g = parseFloat(localStorage.getItem("BTC_Coins")*value/100).toFixed(5) 
+          setsell_limit_amount(parseFloat(localStorage.getItem("BTC_Coins")*value/100).toFixed(5))
+          setsell_limit_total(g*liveprice)
+        }}
+        aria-labelledby="discrete-slider"
+        valueLabelDisplay="auto"
+        step={10}
+        marks
+        min={0}
+        max={100}
+      />
+     
+      <Label style={{color:"black",fontWeight:"bold"}}>Total</Label>
+   <Input invalid={!valid_s} disabled={true}  style={{color:"white"}} value={sell_limit_total} placeholder={`TOTAL AMOUNT in ${pair.substr(pair.indexOf("/")+1,pair.length)}`} onChange={(event)=>{
+      const curr = `${pair.substr(0,pair.indexOf('/'))}_Coins`
+      const curdebt = `${pair.substr(0,pair.indexOf('/'))}_Debt`
+      
+
+     if(parseFloat(parseFloat(event.target.value)/parseFloat(liveprice))>parseFloat(localStorage.getItem(curr))){
+        // alert("do you want to transact");
+       const debt=parseFloat(localStorage.getItem(curr) )- parseFloat(event.target.value*buy_limit_price);
+       if(localStorage.getItem(curdebt) +debt > -9999  )
+        localStorage.setItem( curdebt,localStorage.getItem(curdebt) +debt );
+        //console.log(localStorage.getItem(curdebt) +debt);
+        
+        setvalid_s(false)
+     }
+     else{
+      setvalid_s(true)
+      // setsell_limit_amount(parseFloat(event.target.value)/parseFloat(liveprice))
+     }
+      
+    }}></Input>
+    <Button disabled={!valid_s} onClick={()=>{
+      axios({
+        method:"POST",
+        url:"https://api.anteagle.tech/neworder",
+        headers:{
+          "Accept": "application/json, text/plain, */*", // It can be used to overcome cors errors
+          "Content-Type": "application/json",
+          Authtoken:"sfsfsff"
+        },
+        data: JSON.stringify({
+          userid : localStorage.getItem("userid"),
+          date: "2021-06-21",
+          pair: pair,
+          type : "Limit",
+          side : "SELL",
+          price : parseFloat(liveprice),
+          Amount : sell_limit_amount,
+          filled : "0.0",
+          total : liveprice*sell_limit_amount
+        }),
+      }).then(res=>{console.log(res.data)})
+      const curr = `${pair.substr(0,pair.indexOf('/'))}`
+      //console.log(localStorage.getItem(`${curr}_Coins`) - sell_limit_amount)
+      const end = localStorage.getItem(`${curr}_Coins`) - sell_limit_amount;
+      localStorage.setItem(`${curr}_Coins`,end)
+      axios({
+        method:"post",
+        url : `https://api.anteagle.tech/get${curr.toLowerCase()}?coins=${end}&userid=${localStorage.getItem("userid")}`,
+        headers:{
+          "Accept": "application/json",
+        }
+      }).then(res=>{
+        console.log(res.data);swal("Success","Order Submitted Successfully","success");window.location.href = "/"
+      })
+    }}>Submit</Button>
+    </Form>
+
+</Dialog>
 <div style={{paddingTop:'2rem'}} className="container">
 <Row>
 
@@ -3724,188 +4022,188 @@ setmobileswitch1(e)
 setmobile_port(false)
 }}>
 <DialogContent>
-  <h1 style={{color:"black"}}>YOUR ASSETS</h1>
+  <h3 style={{color:"black"}}>YOUR ASSETS</h3>
 <Card style={{display:parseFloat(localStorage.getItem("BTC_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
       
-      <CardTitle style={{textAlign:"center"}} tag="h3"><img style={{width:"30px"}} src={logobtc}></img> BITCOIN<br/><div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("BTC_Coins")} BTC</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}} tag="h5"><img style={{width:"30px"}} src={logobtc}></img> BITCOIN<br/><div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("BTC_Coins")} BTC</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("BNB_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"><img style={{width:"30px"}} src={bnb}/>    BNB <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("BNB_Coins")} BNB</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"><img style={{width:"30px"}} src={bnb}/>    BNB <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("BNB_Coins")} BNB</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("ETH_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
       
-      <CardTitle style={{textAlign:"center"}}  tag="h3"><img style={{width:"30px"}} src={eth}/>    ETHEREUM <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ETH_Coins")} ETH</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"><img style={{width:"30px"}} src={eth}/>    ETHEREUM <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("ETH_Coins")} ETH</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("USDT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
       
-      <CardTitle style={{textAlign:"center"}}  tag="h3"><img style={{width:"30px"}} src={usdt}/>    USDT <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("USDT_Coins")} USDT</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"><img style={{width:"30px"}} src={usdt}/>    USDT <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("USDT_Coins")} USDT</div></CardTitle>
     </CardBody>
   </Card>
   <Card style={{display:parseFloat(localStorage.getItem("INRD_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ruppee}/>    INRD <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("INRD_Coins")} INRD</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={ruppee}/>    INRD <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("INRD_Coins")} INRD</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("KSM_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ksm}/>    KUSAMA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("KSM_Coins")} KSM</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={ksm}/>    KUSAMA <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("KSM_Coins")} KSM</div></CardTitle>
     </CardBody>
   </Card>  
   <Card style={{display:parseFloat(localStorage.getItem("ATA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ata}/>    AUTOMATA NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ATA_Coins")} ATA</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={ata}/>    AUTOMATA NETWORK <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("ATA_Coins")} ATA</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("MANA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={mana}/>   DECENTRALAND  <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("MANA_Coins")} MANA</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={mana}/>   DECENTRALAND  <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("MANA_Coins")} MANA</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("DGB_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={dgb}/>    DIGIBYTE <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("DGB_Coins")} DGB</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={dgb}/>    DIGIBYTE <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("DGB_Coins")} DGB</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("FTM_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ftm}/>    FANTOM <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FTM_Coins")} FTM</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={ftm}/>    FANTOM <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("FTM_Coins")} FTM</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("ALICE_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={alice}/>    MY NEIGHBOR ALICE <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ALICE_Coins")} ALICE</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={alice}/>    MY NEIGHBOR ALICE <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("ALICE_Coins")} ALICE</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("GTC_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={gtc}/>    GITCOIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("GTC_Coins")} GTC</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={gtc}/>    GITCOIN <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("GTC_Coins")} GTC</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("MATIC_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={matic}/>    MATIC NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("MATIC_Coins")} MATIC</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={matic}/>    MATIC NETWORK <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("MATIC_Coins")} MATIC</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("AXS_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={axs}/>    AXIE INFINITY <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("AXS_Coins")} AXS</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={axs}/>    AXIE INFINITY <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("AXS_Coins")} AXS</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("FTT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ftt}/>    FTX TOKEN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FTT_Coins")} FTT</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={ftt}/>    FTX TOKEN <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("FTT_Coins")} FTT</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("SOL_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={sol}/>    SOLANA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("SOL_Coins")} SOL</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={sol}/>    SOLANA <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("SOL_Coins")} SOL</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("RUNE_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={rune}/>   THORCHAIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("RUNE_Coins")} RUNE</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={rune}/>   THORCHAIN <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("RUNE_Coins")} RUNE</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("UNI_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={uni}/>    UNISWAP <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("UNI_Coins")} UNI</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={uni}/>    UNISWAP <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("UNI_Coins")} UNI</div></CardTitle>
     </CardBody>
   </Card>  
 
   <Card style={{display:parseFloat(localStorage.getItem("DOT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={dot}/>    POLKADOT <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("DOT_Coins")} DOT</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={dot}/>    POLKADOT <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("DOT_Coins")} DOT</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("VET_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={vet}/>    VECHAIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("VET_Coins")} VET</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={vet}/>    VECHAIN <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("VET_Coins")} VET</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("TFUEL_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={tfuel}/>    THETA FUEL <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("TFUEL_Coins")} TFUEL</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={tfuel}/>    THETA FUEL <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("TFUEL_Coins")} TFUEL</div></CardTitle>
     </CardBody>
   </Card>  
 
   <Card style={{display:parseFloat(localStorage.getItem("GRT_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={grt}/>    THE GRAPH <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("GRT_Coins")} GRT</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={grt}/>    THE GRAPH <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("GRT_Coins")} GRT</div></CardTitle>
     </CardBody>
   </Card>
 
    <Card style={{display:parseFloat(localStorage.getItem("ADA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={ada}/>    CARDANO <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ADA_Coins")} ADA</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={ada}/>    CARDANO <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("ADA_Coins")} ADA</div></CardTitle>
     </CardBody>
   </Card>  
 
   <Card style={{display:parseFloat(localStorage.getItem("FIL_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={fil}/>    FILECOIN <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("FIL_Coins")} FIL</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={fil}/>    FILECOIN <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("FIL_Coins")} FIL</div></CardTitle>
     </CardBody>
   </Card>
 
   <Card style={{display:parseFloat(localStorage.getItem("LINK_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={link}/>    CHAINLINK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("LINK_Coins")} LINK</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={link}/>    CHAINLINK <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("LINK_Coins")} LINK</div></CardTitle>
     </CardBody>
   </Card>
 
   <Card style={{display:parseFloat(localStorage.getItem("LUNA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={luna}/>    TERRA <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("LUNA_Coins")} LUNA</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={luna}/>    TERRA <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("LUNA_Coins")} LUNA</div></CardTitle>
     </CardBody>
   </Card>
 
   <Card style={{display:parseFloat(localStorage.getItem("THETA_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={theta}/>    THETA NETWORK <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("THETA_Coins")} THETA</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={theta}/>    THETA NETWORK <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("THETA_Coins")} THETA</div></CardTitle>
     </CardBody>
   </Card>  
     
@@ -3914,7 +4212,7 @@ setmobile_port(false)
   <Card style={{display:parseFloat(localStorage.getItem("ANTEAG_Coins")) > 0 ? 'block' : 'none',paddingBottom:'10px'}}>
     <CardBody>
      
-      <CardTitle style={{textAlign:"center"}}  tag="h3"> <img style={{width:"30px"}} src={logo} style={{backgroundColor:"white",borderRadius:"20px"}}/>    ANTEAG <div style={{marginBottom:"-2rem", color:"yellow"}}>{localStorage.getItem("ANTEAG_Coins")} ANTEAG</div></CardTitle>
+      <CardTitle style={{textAlign:"left"}}  tag="h5"> <img style={{width:"30px"}} src={logo} style={{backgroundColor:"white",borderRadius:"20px"}}/>    ANTEAG <div style={{marginBottom:"-2rem", color:"black"}}>{localStorage.getItem("ANTEAG_Coins")} ANTEAG</div></CardTitle>
     </CardBody>
   </Card>
      
@@ -3974,19 +4272,19 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
     <img src={logobtc} style={{height:"30px",marginLeft:"8px"}} alt="Mark Zuckerberg" class="leaderboard__picture"/>
     <span class="leaderboard__name"  style={{color:"black"}}  onClick={()=>{
     setopen_btc(true)
-
+      seti(1)
   }}> Bitcoin(BTC) - </span>
   
     <span  class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value" style={{marginRight:"8px",float:"right",color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}> {BTC_per}%</span></span>
-    <Dialog open={open_btc} onClose={()=>{setopen_btc(false)}}>
+    <Dialog style={{textAlign:"center"}} open={open_btc} onClose={()=>{setopen_btc(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{marginLeft:"2rem" ,color : parseFloat(BTC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}>{BTC_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_BTC}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}>{BTC_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BTC}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))
         setlive(g)
         setpair(`BTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -3994,7 +4292,7 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
         setshow_buy(true)
        
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))
         setlive(g)
         setpair(`BTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4011,26 +4309,27 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
   <article class="leaderboard__profile">
     <img src={eth}  style={{height:"30px",marginLeft:"8px"}} alt="Ethereum" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
+   
     setopen_eth(true)
-
+    seti(1)
   }}> Ethereum(ETH) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{marginRight:"8px",float:"right",color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}>{ETH_per}%</span></span>
-    <Dialog open={open_eth} onClose={()=>{setopen_eth(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_eth} onClose={()=>{setopen_eth(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(ETH_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}>{ETH_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_ETH}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}>{ETH_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ETH}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))
         setlive(g)
         setpair(`ETH/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))
         setlive(g)
         setpair(`ETH/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4047,25 +4346,25 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
     <img src={bnb} style={{height:"30px",marginLeft:"8px"}} alt="Elizabeth Holmes" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
     setopen_BNB(true)
-    
+    seti(1)
   }}> Binance(BNB) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{marginRight:"8px",float:"right",color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}>{BNB_per}%</span></span>
-    <Dialog open={open_BNB} onClose={()=>{setopen_BNB(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_BNB} onClose={()=>{setopen_BNB(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/bnb.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(BNB_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}>{BNB_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_BNB}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}>{BNB_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))
         setlive(g)
         setpair(`BNB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))
         setlive(g)
         setpair(`BNB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4082,25 +4381,25 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
     <img src={link} style={{height:"30px",marginLeft:"8px"}} alt="Chainlink (LINK)" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
       setopen_LINK(true)
-      
+      seti(1)
     }}> Chainlink(LINK) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{marginRight:"8px",float:"right",color :parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{LINK_per}%</span></span>
-    <Dialog open={open_LINK} onClose={()=>{setopen_LINK(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_LINK} onClose={()=>{setopen_LINK(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/link.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(LINK_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red'}}>{LINK_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_LINK}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red'}}>{LINK_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_LINK}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))
         setlive(g)
         setpair(`LINK/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))
         setlive(g)
         setpair(`LINK/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4117,25 +4416,25 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
     <img src={luna} style={{height:"30px",marginLeft:"8px"}} alt="Terra (LUNA)" class="leaderboard__picture"/>
     <span class="leaderboard__name" onClick={()=>{
       setopen_LUNA(true)
-   
+   seti(1)
     }}>Terra(LUNA) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}>{LUNA_per}%</span></span>
-    <Dialog open={open_LUNA} onClose={()=>{setopen_LUNA(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_LUNA} onClose={()=>{setopen_LUNA(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={luna} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(LUNA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}>{LUNA_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_LUNA}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}>{LUNA_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_LUNA}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))
         setlive(g)
         setpair(`LUNA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))
         setlive(g)
         setpair(`LUNA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4152,25 +4451,25 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
     <img src={theta} style={{height:"30px"}} alt="THETA (THETA)" class="leaderboard__picture"/>
     <span class="leaderboard__name" onClick={()=>{
 setopen_THETA(true)
-     
+     seti(1)
     }}> THETA(THETA) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{THETA_per}%</span></span>
-    <Dialog open={open_THETA} onClose={()=>{setopen_THETA(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_THETA} onClose={()=>{setopen_THETA(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={theta} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(THETA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{THETA_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_THETA}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{THETA_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_THETA}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))
         setlive(g)
         setpair(`THETA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))
         setlive(g)
         setpair(`THETA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4187,25 +4486,25 @@ setopen_THETA(true)
     <img src={grt} style={{height:"30px",marginLeft:"8px"}} alt="Graph (GRT)" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
 setopen_GRT(true)
-     
+     seti(1)
     }}>Graph (GRT) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}>{GRT_per}%</span></span>
-    <Dialog open={open_GRT} onClose={()=>{setopen_GRT(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_GRT} onClose={()=>{setopen_GRT(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={grt} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(GRT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}>{GRT_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_GRT}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}>{GRT_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_GRT}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))
         setlive(g)
         setpair(`GRT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))
         setlive(g)
         setpair(`GRT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4222,25 +4521,25 @@ setopen_GRT(true)
     <img src={tfuel} style={{height:"30px",marginLeft:"8px"}} alt="BNBa Fuel(TFUEL)" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
 setopen_TFUEL(true)
-      
+      seti(1)
     }}> Thetha Fuel(TFUEL) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}>{TFUEL_per}%</span></span>
-    <Dialog open={open_TFUEL} onClose={()=>{setopen_TFUEL(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_TFUEL} onClose={()=>{setopen_TFUEL(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={tfuel} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(TFUEL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}>{TFUEL_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_TFUEL}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}>{TFUEL_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_TFUEL}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))
         setlive(g)
         setpair(`TFUEL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))
         setlive(g)
         setpair(`TFUEL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4257,25 +4556,25 @@ setopen_TFUEL(true)
     <img src={ksm} style={{height:"30px",marginLeft:"8px"}} alt="Kusuma (KSM)" class="leaderboard__picture"/>
     <span class="leaderboard__name" onClick={()=>{
 setopen_KSM(true)
-
+seti(1)
     }}> Kusuma(KSM) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}>{KSM_per}%</span></span>
-    <Dialog open={open_KSM} onClose={()=>{setopen_KSM(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_KSM} onClose={()=>{setopen_KSM(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={ksm} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(KSM_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}>{KSM_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_KSM}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}>{KSM_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_KSM}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))
         setlive(g)
         setpair(`KSM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))
         setlive(g)
         setpair(`KSM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4292,25 +4591,25 @@ setopen_KSM(true)
     <img src={ada} style={{height:"30px",marginLeft:"8px"}} alt="Cardano (ADA)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_ADA(true)
-     
+     seti(1)
     }}> Cardano(ADA) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}>{ADA_per}%</span></span>
-    <Dialog open={open_ADA} onClose={()=>{setopen_ADA(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_ADA} onClose={()=>{setopen_ADA(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={ada} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(ADA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}>{ADA_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_ADA}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}>{ADA_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ADA}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))
         setlive(g)
         setpair(`ADA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))
         setlive(g)
         setpair(`ADA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4327,25 +4626,25 @@ setopen_ADA(true)
     <img src={vet} style={{height:"30px",marginLeft:"8px"}} alt="VeChain (VET)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_VET(true)
-     
+     seti(1)
     }}> VeChain(VET) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(VET_per) >0 ? 'green' : 'red'}}>{VET_per}%</span></span>
-    <Dialog open={open_VET} onClose={()=>{setopen_VET(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_VET} onClose={()=>{setopen_VET(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={vet} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(VET_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red'}}>{VET_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_VET}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red'}}>{VET_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_VET}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))
         setlive(g)
         setpair(`VET/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button  style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg"  style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))
         setlive(g)
         setpair(`VET/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4362,25 +4661,25 @@ setopen_VET(true)
     <img src={dot} style={{height:"30px",marginLeft:"8px"}} alt="Polkadot (DOT)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_DOT(true)
-     
+     seti(1)
     }}> Polkadot(DOT) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}>{DOT_per}%</span></span>
-    <Dialog open={open_DOT} onClose={()=>{setopen_DOT(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_DOT} onClose={()=>{setopen_DOT(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={dot} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(DOT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}>{DOT_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_DOT}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}>{DOT_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_DOT}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))
         setlive(g)
         setpair(`DOT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))
         setlive(g)
         setpair(`DOT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4397,25 +4696,25 @@ setopen_DOT(true)
     <img src={uni} style={{height:"30px",marginLeft:"8px"}} alt="Uniswap (UNI)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_UNI(true)
-      
+      seti(1)
     }}> Uniswap(UNI) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}>{UNI_per}%</span></span>
-    <Dialog open={open_UNI} onClose={()=>{setopen_UNI(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_UNI} onClose={()=>{setopen_UNI(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={uni} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(UNI_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}>{UNI_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_UNI}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}>{UNI_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_UNI}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))
         setlive(g)
         setpair(`UNI/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))
         setlive(g)
         setpair(`UNI/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4432,25 +4731,25 @@ setopen_UNI(true)
     <img src={rune} style={{height:"30px",marginLeft:"8px"}} alt="THORChain (RUNE)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_RUNE(true)
-      
+      seti(1)
     }}> THORChain(RUNE) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}>{RUNE_per}%</span></span>
-    <Dialog open={open_RUNE} onClose={()=>{setopen_RUNE(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_RUNE} onClose={()=>{setopen_RUNE(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={rune} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(RUNE_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}>{RUNE_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_RUNE}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}>{RUNE_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_RUNE}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))
         setlive(g)
         setpair(`RUNE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))
         setlive(g)
         setpair(`RUNE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4467,25 +4766,25 @@ setopen_RUNE(true)
     <img src={sol} style={{height:"30px",marginLeft:"8px"}} alt="SOLANA (SOL)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_SOL(true)
-      
+      seti(1)
     }}> SOLANA(SOL) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}>{SOL_per}%</span></span>
-    <Dialog open={open_SOL} onClose={()=>{setopen_SOL(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_SOL} onClose={()=>{setopen_SOL(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={sol} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(SOL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}>{SOL_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_SOL}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}>{SOL_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_SOL}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))
         setlive(g)
         setpair(`SOL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))
         setlive(g)
         setpair(`SOL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4502,25 +4801,25 @@ setopen_SOL(true)
     <img src={ftt} style={{height:"30px",marginLeft:"8px"}} alt="FTX (FTT)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_FTT(true)
-      
+      seti(1)
     }}> FTX(FTT) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}>{FTT_per}%</span></span>
-    <Dialog open={open_FTT} onClose={()=>{setopen_FTT(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_FTT} onClose={()=>{setopen_FTT(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={ftt} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(FTT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}>{FTT_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_FTT}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}>{FTT_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_FTT}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))
         setlive(g)
         setpair(`FTT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))
         setlive(g)
         setpair(`FTT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4537,25 +4836,25 @@ setopen_FTT(true)
     <img src={axs} style={{height:"30px",marginLeft:"8px"}} alt="Axie Infinity (AXS)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_AXS(true)
-
+seti(1)
     }}> Axie Infinity(AXS) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}>{AXS_per}%</span></span>
-    <Dialog open={open_AXS} onClose={()=>{setopen_AXS(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_AXS} onClose={()=>{setopen_AXS(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={axs} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(AXS_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}>{AXS_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_AXS}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}>{AXS_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_AXS}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))
         setlive(g)
         setpair(`AXS/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))
         setlive(g)
         setpair(`AXS/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4572,25 +4871,25 @@ setopen_AXS(true)
     <img src={matic} style={{height:"30px",marginLeft:"8px"}} alt="Polygon (MATIC)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_MATIC(true)
-      
+      seti(1)
     }}> Polygon(MATIC) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}>{MATIC_per}%</span></span>
-    <Dialog open={open_MATIC} onClose={()=>{setopen_MATIC(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_MATIC} onClose={()=>{setopen_MATIC(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={matic} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(MATIC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}>{MATIC_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_MATIC}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}>{MATIC_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_MATIC}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))
         setlive(g)
         setpair(`MATIC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))
         setlive(g)
         setpair(`MATIC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4607,25 +4906,25 @@ setopen_MATIC(true)
     <img src={gtc} style={{height:"30px",marginLeft:"8px"}} alt="Gitcoin (GTC)" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
 setopen_GTC(true)
-  
+  seti(1)
     }}> Gitcoin(GTC) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}>{GTC_per}%</span></span>
-    <Dialog open={open_GTC} onClose={()=>{setopen_GTC(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_GTC} onClose={()=>{setopen_GTC(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={gtc} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(GTC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}>{GTC_per}%</span></span><br/>
-      {/* <canvas id="btcChart" ref={refHandler_GTC}></canvas> */}
+      <span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}>{GTC_per}%</span></span><br/>
+      {/* <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_GTC}></canvas> */}
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))
         setlive(g)
         setpair(`GTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))
         setlive(g)
         setpair(`GTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4642,25 +4941,25 @@ setopen_GTC(true)
     <img src={alice} style={{height:"30px",marginLeft:"8px"}} alt="Alice (ALICE)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_ALICE(true)
-      
+      seti(1)
     }}> Alice(ALICE) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}>{ALICE_per}%</span></span>
-    <Dialog open={open_ALICE} onClose={()=>{setopen_ALICE(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_ALICE} onClose={()=>{setopen_ALICE(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={alice} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(ALICE_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}>{ALICE_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_ALICE}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}>{ALICE_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ALICE}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))
         setlive(g)
         setpair(`ALICE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))
         setlive(g)
         setpair(`ALICE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4677,25 +4976,25 @@ setopen_ALICE(true)
     <img src={fil} style={{height:"30px",marginLeft:"8px"}} alt="FileCoin (FIL)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_FIL(true)
-      
+      seti(1)
     }}> FileCoin(FIL) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}>{FIL_per}%</span></span>
-    <Dialog open={open_FIL} onClose={()=>{setopen_FIL(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_FIL} onClose={()=>{setopen_FIL(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={fil} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(FIL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}>{FIL_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_FIL}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}>{FIL_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_FIL}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))
         setlive(g)
         setpair(`FIL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))
         setlive(g)
         setpair(`FIL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4712,25 +5011,25 @@ setopen_FIL(true)
     <img src={ftm} style={{height:"30px",marginLeft:"8px"}} alt="Fantom (FTM)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_FTM(true)
-      
+      seti(1)
     }}> Fantom(FTM) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}>{FTM_per}%</span></span>
-    <Dialog open={open_FTM} onClose={()=>{setopen_FTM(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_FTM} onClose={()=>{setopen_FTM(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={ftm} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(FTM_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}>{FTM_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_FTM}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}>{FTM_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_FTM}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))
         setlive(g)
         setpair(`FTM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))
         setlive(g)
         setpair(`FTM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4747,25 +5046,25 @@ setopen_FTM(true)
     <img src={dgb} style={{height:"30px",marginLeft:"8px"}} alt="DigiByte (DGB)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
 setopen_DGB(true)
-      
+      seti(1)
     }}> DigiByte(DGB) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}>{DGB_per}%</span></span>
-    <Dialog open={open_DGB} onClose={()=>{setopen_DGB(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_DGB} onClose={()=>{setopen_DGB(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={dgb} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(DGB_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}>{DGB_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_DGB}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}>{DGB_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_DGB}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))
         setlive(g)
         setpair(`DGB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))
         setlive(g)
         setpair(`DGB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4782,25 +5081,25 @@ setopen_DGB(true)
     <img src={mana} style={{height:"30px",marginLeft:"8px"}} alt="Decentraland (MANA)" class="leaderboard__picture"/>
     <span class="leaderboard__name"   onClick={()=>{
       setopen_MANA(true)
-     
+     seti(1)
     }}> Decentraland(MANA) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}>{MANA_per}%</span></span>
-    <Dialog open={open_MANA} onClose={()=>{setopen_MANA(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_MANA} onClose={()=>{setopen_MANA(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
                   <img src={mana} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(MANA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}>{MANA_per}%</span></span><br/>
-      <canvas id="btcChart" ref={refHandler_MANA}></canvas>
+      <span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}>{MANA_per}%</span></span><br/>
+      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_MANA}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))
         setlive(g)
         setpair(`MANA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))
         setlive(g)
         setpair(`MANA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
@@ -4817,25 +5116,25 @@ setopen_DGB(true)
     <img src={ata} style={{height:"30px",marginLeft:"8px"}} alt="Automata (ATA)" class="leaderboard__picture"/>
     <span class="leaderboard__name"  onClick={()=>{
       setopen_ATA(true)
-      
+      seti(1)
     }}>Automata (ATA) - </span>
     <span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}>{ATA_per}%</span></span>
-    <Dialog open={open_ATA} onClose={()=>{setopen_ATA(false)}}>
+    <Dialog  style={{textAlign:"center"}} open={open_ATA} onClose={()=>{setopen_ATA(false)}}>
    
-    <DialogContent>
+    <DialogContent style={{paddingBottom:"1.2rem"}}>
 
       <img src={ata} width="15%"/> 
-      <span class="leaderboard__value" style={{textAlign:"cente",marginLeft:"2rem" ,color : parseFloat(ATA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}>{ATA_per}%</span></span><br/>
-      {/* <canvas id="btcChart" ref={refHandler_ATA}></canvas> */}
+      <span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}>{ATA_per}%</span></span><br/>
+       {/* <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ATA}></canvas>  */}
       <span style={{marginLeft:"1.4rem"}}>
-      <Button style={{float:"left"}} onClick={()=>{
+      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))
         setlive(g)
         setpair(`ATA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
         setshow_buy(true)
 
       }} >Buy</Button>
-      <Button style={{float:"right"}} onClick={()=>{
+      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
         const g = mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))
         setlive(g)
         setpair(`ATA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
