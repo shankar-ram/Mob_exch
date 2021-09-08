@@ -28,9 +28,12 @@ import Dropdown from '@restart/ui/esm/Dropdown';
 import { NavDropdown} from 'react-bootstrap';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 const NavBar=()=>{
+  const [dilg,setDilg]=React.useState(false)
   const [isOpen, setIsOpen] = useState(false);
   
   const [modal, setModal] = useState(false);
@@ -39,7 +42,7 @@ const NavBar=()=>{
   const toggle = () => setIsOpen(!isOpen);
    return(
      <>
-    
+
     
      <div>
       <Navbar fixed="top"  dark expand="md" style={{padding:"1% 3% 2%",backgroundColor:" #200F21"}}>
@@ -52,12 +55,29 @@ const NavBar=()=>{
             </NavItem>
             <NavItem className="items">
               <NavLink activeClassName="menu_active"   className="nav-link" style={{cursor:"pointer"}} onClick={()=>{
-       
+                  setDilg(true)
       
               }}>FAQ</NavLink>
             </NavItem>
            
-  
+            {dilg?<> 
+              <Dialog  open={dilg} onClose={()=>{
+setDilg(false)
+}}>
+          <div style={{borderRadius:"10px 10px"}}>
+            <DialogTitle style={{backgroundColor:"#986D8E"}}> <h2 >Frequently Asked Questions </h2></DialogTitle>
+           
+            <DialogContent style={{textAlign:"left",backgroundColor:" #E4D8DC ",paddingTop:"2.5rem",paddingBottom:"2.5rem",paddingRight:"3rem"}}>
+           <a className="faq-a" href=""> <h4 className="faq">1. What is fulltrade?</h4></a>
+           <a className="faq-a" href=""> <h4  className="faq">2. What is AntEagle?</h4></a>
+           <a className="faq-a" href=""> <h4  className="faq">3. Why should I trust AntEagle?</h4></a>
+           <a className="faq-a" href=""> <h4  className="faq">4. How to redeem vouchers?</h4></a>
+           <a className="faq-a" href=""> <h4  className="faq">5. How to deposit/withdraw cryptocurrency</h4></a>
+            </DialogContent>
+            </div>
+              </Dialog>
+            </>:null
+             }
               
             <Button size="lg"   className="nav-btn" style={{color:"black"}}  onClick={()=>{
             localStorage.setItem("land",true)

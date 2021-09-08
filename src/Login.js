@@ -93,10 +93,7 @@ function App() {
 
   {
     signup ?    <div className="modal1" style={{height:"500px"}}>
-    <a style={{fontSize:"1.1rem",color:"white",fontWeight:"lighter",marginLeft:"0.7rem",cursor:"pointer"}}  onClick={()=>{
-        localStorage.removeItem("land")
-        window.location.href="/"
-    }}> Back</a>
+    
    <div className="circle" ><img src={logo} style={{height:"120px",width:"120px",backgroundColor:"white",borderRadius:"100px"}}/></div>
    
     <div className="login" style={{marginTop:"0rem"}}>
@@ -144,7 +141,11 @@ function App() {
             swal("Already Registered","This Email Address or username is already registered, please choose another","warning")   
         }
         }}>Let's Go.</button>
-        <a style={{fontSize:"10px",color:"white",textDecoration:"none",textAlign:"center",alignContent:"center",marginLeft:"4rem",marginTop:"2rem",cursor:"pointer"}} onClick={()=>{
+        <a style={{fontSize:"1.1rem",color:"white",fontWeight:"lighter",marginLeft:"0.7rem",cursor:"pointer"}}  onClick={()=>{
+        localStorage.removeItem("land")
+        window.location.href="/"
+    }}> Back</a>
+        <a style={{fontSize:"10px",color:"white",textDecoration:"none",textAlign:"center",alignContent:"center",marginLeft:"5.5rem",marginTop:"2rem",cursor:"pointer"}} onClick={()=>{
             setsignup(false)
             setsignin(true)
             }}>
@@ -153,11 +154,8 @@ function App() {
     
     </div>
   </div> : signin?
-    <div className="modal1" style={{zIndex:10,height:"400px"}}>
-    <a style={{fontSize:"1.1rem",color:"white",fontWeight:"lighter",marginLeft:"0.7rem",cursor:"pointer"}}  onClick={()=>{
-        localStorage.removeItem("land")
-        window.location.href="/"
-    }}> Back</a>
+    <div className="modal1" style={{zIndex:10,height:"425px"}}>
+    
     <div className="circle" ><img src={logo} style={{height:"120px",width:"120px",backgroundColor:"white",borderRadius:"100px"}}/></div>
     <div className="login">
       <h1>Login</h1>
@@ -218,12 +216,16 @@ function App() {
           })
          
         }}>Let me in.</button>
-         <a style={{cursor:"pointer",color:"white",fontSize:"1rem",marginLeft:"90px"}} onClick={()=>{ }} onClick={()=>{
+        <a style={{fontSize:"1.1rem",color:"white",fontWeight:"lighter",marginLeft:"0.7rem",cursor:"pointer"}}  onClick={()=>{
+        localStorage.removeItem("land")
+        window.location.href="/"
+    }}> Back</a>
+         <a style={{cursor:"pointer",color:"white",fontSize:"1rem",marginLeft:"110px"}} onClick={()=>{ }} onClick={()=>{
            setsignin(false)
            setVisible(true)
            
          }}>Forgot Password ?</a><br/>
-        <a style={{fontSize:"10px",color:"white",textDecoration:"none",textAlign:"center",alignContent:"center",marginLeft:"4rem",marginTop:"5rem",cursor:"pointer"}} onClick={()=>{
+        <a style={{fontSize:"10px",color:"white",textDecoration:"none",textAlign:"center",alignContent:"center",marginLeft:"3rem",marginTop:"5.5rem",cursor:"pointer",marginBottom:"3rem"}} onClick={()=>{
             setsignup(true)
             setsignin(false)
         }}>Dont have Account? <span style={{fontSize:"20px"}}>Signup here</span></a>

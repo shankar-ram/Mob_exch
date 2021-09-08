@@ -34,7 +34,7 @@ const Footer=()=>{
         <img src={tw}></img>
       </a>
      
-      <a href="" target="_blank" className="me-4 text-reset">
+      <a href="https://t.me/anteagle" target="_blank" className="me-4 text-reset">
         <img src={telegram}></img>
       </a>
         </div>

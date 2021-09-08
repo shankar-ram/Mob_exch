@@ -244,6 +244,7 @@ html {
 
 }
 
+
 .tabs {
 
   background: white;
@@ -251,6 +252,13 @@ html {
   box-shadow: 14px 14px 14px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 5px;
 
+}
+
+ .swap  h3{
+
+  margin-top:0.5rem;
+  text-align: center;
+ 
 }
 
 .react-tabs__tab{
@@ -266,7 +274,28 @@ html {
   border-bottom:none;
 }
 
+
+
 .MuiInput-underline{
   border-bottom: 20px;
 }  
 
+
+
+.input-swap{
+  border-radius: 20px;
+  border: 1px solid rgb(237, 238, 242);
+  background-color: rgb(247, 248, 250);
+  width: initial;
+}
+
+.inp-swap{
+  outline: none;
+  border: none;
+  background-color: rgb(247, 248, 250);
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  font-size: 20px;
+  padding-right:2rem;
+}
+
+ 

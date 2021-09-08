@@ -190,3 +190,21 @@ footer .contact{
 .year h6{
     font-weight: normal;
 }
+
+.faq{
+    line-height: 2;
+}
+.faq-a{
+    text-decoration: none;
+    color:#3b3c36;
+
+}
+
+.faq-a:hover{
+    color:black;
+}
+
+.faq:hover{
+    font-size: 1.6rem;
+}
+

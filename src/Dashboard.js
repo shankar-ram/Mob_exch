@@ -261,7 +261,11 @@ function App() {
       
     }
   })
-
+  const [todiag,setToDiag]=React.useState(false)
+  const [diag, setOpenDiag]=React.useState(false)
+  const [isDropdownOpend , setDropdownOpenn ] = React.useState(false);
+  const [butnval,setButnVal]=React.useState("BTC")
+  const [settings,setSettings]=React.useState(false)
   const [BTC_per,setBTC_per] = React.useState(0)
   const [BNB_per,setBNB_per] = React.useState(0);
   const [ETH_per,setETH_per] = React.useState(0);
@@ -3749,41 +3753,35 @@ anteagle_pro ?
   
 
  <Form style={{padding:"20px"}}>
-  <CardHeader styke={{fontWeight:"bold"}}>BALANCE : {localStorage.getItem(`${mobileswitch1 ? 'USDT' : 'INRD'}_Coins`)} {`${mobileswitch1 ? 'USDT' : 'INRD'}`}</CardHeader>
+  <CardHeader style={{fontWeight:"bold"}}>BALANCE : {localStorage.getItem(`${mobileswitch1 ? 'USDT' : 'INRD'}_Coins`)} {`${mobileswitch1 ? 'USDT' : 'INRD'}`}</CardHeader>
     <Label style={{color:"black",fontWeight:"bold"}}>Price</Label>
-    <Input value={liveprice} disabled={true} style={{color:"white"}} onChange={(event)=>{
-      setbuy_limit_price(parseFloat(event.target.value) )
+    <Input  disabled={true} style={{color:"white"}} value={pair == "BTC/USDT" ? liveprice_BTC : pair == "BTC/INRD" ? parseFloat(liveprice_BTC*conversion).toFixed(2) : pair == "ETH/USDT" ? liveprice_ETH : pair == "ETH/INRD" ? parseFloat(liveprice_ETH*conversion).toFixed(2) : pair == "BNB/USDT" ? liveprice_BNB : pair == "BNB/INRD" ? parseFloat(liveprice_BNB*conversion).toFixed(2) : pair == "KSM/USDT" ? liveprice_KSM : pair == "KSM/INRD" ? parseFloat(liveprice_KSM*conversion).toFixed(2) : pair =="ATA/USDT"? liveprice_ATA : pair=="ATA/INRD" ? parseFloat(liveprice_ATA*conversion).toFixed(2) : pair=="MANA/USDT"? liveprice_MANA : pair=="MANA/INRD" ? parseFloat(liveprice_MANA*conversion).toFixed(2) : pair=="DGB/USDT"?liveprice_DGB: pair=="DGB/INRD"? parseFloat(liveprice_DGB*conversion).toFixed(2) : pair=="FTM/USDT"?liveprice_FTM: pair=="FTM/INRD"? parseFloat(liveprice_FTM*conversion).toFixed(2) : pair=="ALICE/USDT"?liveprice_ALICE: pair=="ALICE/INRD"? parseFloat(liveprice_ALICE*conversion).toFixed(2) : pair=="GTC/USDT"?liveprice_GTC: pair=="GTC/INRD"? parseFloat(liveprice_GTC*conversion).toFixed(2) : pair=="MATIC/USDT"?liveprice_MATIC: pair=="MATIC/INRD"? parseFloat(liveprice_MATIC*conversion).toFixed(2):pair=="AXS/USDT"?liveprice_AXS: pair=="AXS/INRD"? parseFloat(liveprice_AXS*conversion).toFixed(2): pair=="FTT/USDT"?liveprice_FTT: pair=="FTT/INRD"? parseFloat(liveprice_FTT*conversion).toFixed(2) :pair=="SOL/USDT"?liveprice_SOL: pair=="SOL/INRD"? parseFloat(liveprice_SOL*conversion).toFixed(2) :pair=="RUNE/USDT"?liveprice_RUNE: pair=="RUNE/INRD"? parseFloat(liveprice_RUNE*conversion).toFixed(2) :pair=="UNI/USDT"?liveprice_UNI: pair=="UNI/INRD"? parseFloat(liveprice_UNI*conversion).toFixed(2):pair=="DOT/USDT"?liveprice_DOT: pair=="DOT/INRD"? parseFloat(liveprice_DOT*conversion).toFixed(2) :pair=="VET/USDT"?liveprice_VET: pair=="VET/INRD"? parseFloat(liveprice_VET*conversion).toFixed(2):pair=="TFUEL/USDT"?liveprice_TFUEL: pair=="TFUEL/INRD"? parseFloat(liveprice_TFUEL*conversion).toFixed(2):pair=="GRT/USDT"?liveprice_GRT: pair=="GRT/INRD"? parseFloat(liveprice_GRT*conversion).toFixed(2):pair=="ADA/USDT"?liveprice_ADA: pair=="ADA/INRD"? parseFloat(liveprice_ADA*conversion).toFixed(2):pair=="FIL/USDT"?liveprice_FIL: pair=="FIL/INRD"? parseFloat(liveprice_FIL*conversion).toFixed(2):pair=="LINK/USDT"?liveprice_LINK: pair=="LINK/INRD"? parseFloat(liveprice_LINK*conversion).toFixed(2):pair=="LUNA/USDT"?liveprice_LUNA: pair=="LUNA/INRD"? parseFloat(liveprice_LUNA*conversion).toFixed(2):pair=="THETA/USDT"?liveprice_THETA: parseFloat(liveprice_THETA*conversion).toFixed(2)} disabled onChange={(event)=>{
+      setbuy_market_price(event.target.value)
 
     }} placeholder={`ENTER PRICE in ${pair.substr(pair.indexOf('/')+1,pair.length)}`}></Input>
 
 
 
 <Label style={{color:"black",fontWeight:"bold"}}>Enter Amount</Label>
-   <Input invalid={!valid} style={{color : 'black'}} placeholder={`Enter AMOUNT in ${pair.substr(pair.indexOf('/')+1,pair.length)}`} onChange={(event)=>{
-      const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}_Coins`
+   <Input disabled={true} style={{color:"white"}} placeholder={`ENTER AMOUNT in ${pair.substr(0,pair.indexOf('/'))}`} value={buy_market_amount} onChange={(event)=>{
+      setbuy_market_amount(event.target.value)
       
-     if(parseFloat(event.target.value)>parseFloat(localStorage.getItem(curr))){
-        setvalid(false)
-     }
-     else{
-      setvalid(true)
-    
-      setbuy_limit_amount(parseFloat(parseFloat(event.target.value) /parseFloat(liveprice)) )
-     }
-      
-    }}></Input>
+    }}  placeholder={`ENTER AMOUNT in ${pair.substr(0,pair.indexOf('/'))}`}></Input>
 
     <Label style={{color:"black",fontWeight:"bold"}}>You will recieve</Label>
    
     
-    <Input invalid={!valid} style={{color:"white"}} placeholder={`ENTER AMOUNT in ${pair.substr(0,pair.indexOf('/'))}`} disabled={true} value={buy_limit_amount} onChange={(event)=>{
+    <Input  invalid={!valid} placeholder={`TOTAL AMOUNT in ${pair.substr(pair.indexOf('/')+1,pair.length)}`} onChange={(event)=>{
       const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}_Coins`
-     if(parseFloat(event.target.value*buy_limit_price)>parseFloat(localStorage.getItem(curr))){
+    setbuy_market_price(parseFloat(pair == "BTC/USDT" ? liveprice_BTC : pair == "BTC/INRD" ? parseFloat(liveprice_BTC*conversion).toFixed(2) : pair == "ETH/USDT" ? liveprice_ETH : pair == "ETH/INRD" ? parseFloat(liveprice_ETH*conversion).toFixed(2) : pair == "BNB/USDT" ? liveprice_BNB : pair == "BNB/INRD" ? parseFloat(liveprice_BNB*conversion).toFixed(2) : pair == "KSM/USDT" ? liveprice_KSM : pair == "KSM/INRD" ? parseFloat(liveprice_KSM*conversion).toFixed(2) : pair =="ATA/USDT"? liveprice_ATA : pair=="ATA/INRD" ? parseFloat(liveprice_ATA*conversion).toFixed(2) : pair=="MANA/USDT"? liveprice_MANA : pair=="MANA/INRD" ? parseFloat(liveprice_MANA*conversion).toFixed(2) : pair=="DGB/USDT"?liveprice_DGB: pair=="DGB/INRD"? parseFloat(liveprice_DGB*conversion).toFixed(2) : pair=="FTM/USDT"?liveprice_FTM: pair=="FTM/INRD"? parseFloat(liveprice_FTM*conversion).toFixed(2) : pair=="ALICE/USDT"?liveprice_ALICE: pair=="ALICE/INRD"? parseFloat(liveprice_ALICE*conversion).toFixed(2) : pair=="GTC/USDT"?liveprice_GTC: pair=="GTC/INRD"? parseFloat(liveprice_GTC*conversion).toFixed(2) : pair=="MATIC/USDT"?liveprice_MATIC: pair=="MATIC/INRD"? parseFloat(liveprice_MATIC*conversion).toFixed(2):pair=="AXS/USDT"?liveprice_AXS: pair=="AXS/INRD"? parseFloat(liveprice_AXS*conversion).toFixed(2): pair=="FTT/USDT"?liveprice_FTT: pair=="FTT/INRD"? parseFloat(liveprice_FTT*conversion).toFixed(2) :pair=="SOL/USDT"?liveprice_SOL: pair=="SOL/INRD"? parseFloat(liveprice_SOL*conversion).toFixed(2) :pair=="RUNE/USDT"?liveprice_RUNE: pair=="RUNE/INRD"? parseFloat(liveprice_RUNE*conversion).toFixed(2) :pair=="UNI/USDT"?liveprice_UNI: pair=="UNI/INRD"? parseFloat(liveprice_UNI*conversion).toFixed(2):pair=="DOT/USDT"?liveprice_DOT: pair=="DOT/INRD"? parseFloat(liveprice_DOT*conversion).toFixed(2) :pair=="VET/USDT"?liveprice_VET: pair=="VET/INRD"? parseFloat(liveprice_VET*conversion).toFixed(2):pair=="TFUEL/USDT"?liveprice_TFUEL: pair=="TFUEL/INRD"? parseFloat(liveprice_TFUEL*conversion).toFixed(2):pair=="GRT/USDT"?liveprice_GRT: pair=="GRT/INRD"? parseFloat(liveprice_GRT*conversion).toFixed(2):pair=="ADA/USDT"?liveprice_ADA: pair=="ADA/INRD"? parseFloat(liveprice_ADA*conversion).toFixed(2):pair=="FIL/USDT"?liveprice_FIL: pair=="FIL/INRD"? parseFloat(liveprice_FIL*conversion).toFixed(2):pair=="LINK/USDT"?liveprice_LINK: pair=="LINK/INRD"? parseFloat(liveprice_LINK*conversion).toFixed(2):pair=="LUNA/USDT"?liveprice_LUNA: pair=="LUNA/INRD"? parseFloat(liveprice_LUNA*conversion).toFixed(2):pair=="THETA/USDT"?liveprice_THETA: parseFloat(liveprice_THETA*conversion).toFixed(2)))
+     if(parseFloat(event.target.value)>parseFloat(localStorage.getItem(curr))){
       setvalid(false)
+      
      }
      else{
       setvalid(true)
-      // setlimit_buy_total(parseFloat(event.target.value)*parseFloat(buy_limit_price))
+      
+      setbuy_market_amount(parseFloat(event.target.value)/parseFloat(buy_market_price))
      }
       
     }}></Input>
@@ -3796,7 +3794,7 @@ anteagle_pro ?
         headers:{
           "Accept": "application/json, text/plain, */*", // It can be used to overcome cors errors
           "Content-Type": "application/json",
-          Authtoken:"sfsfsff"
+        
         },
         data: JSON.stringify({
           userid : localStorage.getItem("userid"),
@@ -3804,10 +3802,10 @@ anteagle_pro ?
           pair: pair,
           type : "Limit",
           side : "BUY",
-          price : liveprice,
-          Amount : buy_limit_amount,
+          price :buy_market_price,
+          Amount :  parseFloat(buy_market_amount).toFixed(5),
           filled : "0.0",
-          total : liveprice * buy_limit_amount
+          total : buy_market_price*buy_market_amount
         }),
       }).then(res=>{
         const curr = `${pair.substr(pair.indexOf('/')+1,pair.length)}`
@@ -5165,6 +5163,9 @@ setopen_DGB(true)
 else{
   return (
   < >
+
+      
+
     <Navbar bg="light" expand="lg" style={{padding:"20px"}}>
     <img src={logo} style={{height:"70px",width:"70px"}}></img>{"   "}
        <Navbar.Brand href="#home" style={{fontFamily:"Strasua",marginLeft:"10px"}}>Anteagle Exchange</Navbar.Brand>
@@ -5225,13 +5226,14 @@ else{
       
        <Nav.Link onClick={()=>{
         document.body.classList.remove("white-content")
+        window.location.href="https://mobile.twitter.com/anteagle_"
       }}><img src="https://img.icons8.com/ios-glyphs/24/000000/twitter--v2.png"/></Nav.Link>
        <Nav.Link onClick={()=>{
         document.body.classList.remove("white-content")
+        window.location.href="https://t.me/anteagle"
       }}><img src="https://img.icons8.com/ios-filled/24/000000/telegram-app.png"/></Nav.Link>
-      <Nav.Link onClick={()=>{
-        document.body.classList.remove("white-content")
-      }}><img src="https://img.icons8.com/material-outlined/24/000000/settings--v3.png"/></Nav.Link>
+      
+      
       </Navbar.Collapse>
     
   </Navbar>
@@ -6581,30 +6583,31 @@ else{
 </> : swap? <>
                       <div className="row" style={{paddingRight:"40px",marginLeft:"40px"}}>
 
-<div class="tabs" style={{width:"40%"}}>    
+<div class="tabs swap" style={{ display:"inline-block",width:"40%",position:"fixed",left: "0",right:"0",margin:"auto",marginTop:"4rem",borderRadius:"3rem"}}>    
                           
         <Row>
           <Col>
-            <Card >
-              <CardHeader>SWAP YOUR COINS</CardHeader>
+           
+              <h3>SWAP YOUR COINS</h3>
               <CardBody style={{alignSelf:"center",width:"100%"}}>
-                <Card >
+                
                     
                   <div style={{ textColor: "black", marginLeft: "1rem" }}>
-                    <h3 style={{ color: "black", fontWeight: "bold", fontFamily: "Kanit,sans-serif" }}>Exchange</h3>
-                    <p style={{ color: "black" }}>Trade Token in an Instant</p>
+                    <h3 style={{ color: "black", fontFamily: "Kanit,sans-serif" }}>Exchange</h3>
+                   
                   </div>
 
 
-                  <div className="input" style={{ width: "98%", paddingLeft: "0.4rem" }}>
+              
 
-                    <div style={{ background: "#eeeaf4" }}></div>
-                      <Label style={{ color: "black", padding: "0.3rem", width: "99%" }}>From</Label>
-                      <p >Max Available {localStorage.getItem(`${from}_Coins`)}</p>
+                  <Label style={{ color: "black", padding: "0.3rem", width: "99%" }}>From</Label>
+                    <div className="input-swap"> 
+                     
+                      <p style={{marginLeft:"0.7rem",marginTop:"0.5rem"}}>Max Available: {localStorage.getItem(`${butnval}_Coins`)}</p>
                       <Row>
                       <Col>
-                      <Input placeholder={`ENTER ${from}`} onChange={(e) => {
-                        if (parseFloat(e.target.value) > parseFloat(localStorage.getItem(`${from}_Coins`))) {
+                      <input className="inp-swap" placeholder={`ENTER ${butnval}`} onChange={(e) => {
+                        if (parseFloat(e.target.value) > parseFloat(localStorage.getItem(`${butnval}_Coins`))) {
                           alert("Please Enter Amount less than or equal to your wallet balance")
                           setvalid1(false);
                         }
@@ -6616,7 +6619,7 @@ else{
                           //console.log(parseFloat(e.target.value))
 
                           setvalid1(true)
-                          if (from == 'ETH') {  
+                          if (butnval == 'ETH') {  
                           if( to == 'INRD'){
                             setfinal(liveusd * liveprice_ETH * parseFloat(e.target.value) * 0.98)
                           }
@@ -6632,7 +6635,7 @@ else{
                           else{
                             alert("Cannot convert to same type")
                           }}
-                          else if (from == 'BTC') {
+                          else if (butnval == 'BTC') {
                             if( to == 'INRD'){
                               //console.log(75 * 2600000 * parseFloat(e.target.value) * 0.98 )
                               setfinal(75 * 2600000 * parseFloat(e.target.value) * 0.98 )
@@ -6651,7 +6654,7 @@ else{
                             }
                             
                           }
-                          else if (from == 'BNB') {  
+                          else if (butnval == 'BNB') {  
                             if( to == 'INRD'){
                             setfinal(75 * liveprice_BTC * parseFloat(e.target.value) * 0.98 )
                           }
@@ -6667,11 +6670,11 @@ else{
                           else{
                             alert("Cannot convert to same type")
                           } }
-                          else if (from == 'ANTEAG') { 
+                          else if (butnval == 'ANTEAG') { 
                             if( to == 'INRD'){
                               setfinal(75 * liveprice_BTC * parseFloat(e.target.value) * 0.98 )
                             }
-                            else if(from == 'USDT'){
+                            else if(butnval == 'USDT'){
                               setfinal(liveprice_BTC * parseFloat(e.target.value) * 0.98 )
                             }
                             else if(to == 'BNB'){
@@ -6684,7 +6687,7 @@ else{
                               alert("Cannot convert to same type")
                             }
                            }
-                          else if (from == 'USDT') { 
+                          else if (butnval == 'USDT') { 
                             if( to == 'INRD'){
                               setfinal(75 * parseFloat(e.target.value) * 0.98 )
                             }
@@ -6723,10 +6726,66 @@ else{
 
 
 
-                      }} style={{ height: "1.5rem", width: "100%", background: "rgb(238,234,244)", marginTop: "1rem", marginLeft: "0.2rem" }}></Input>
+                      }} ></input>
                         </Col>
+
+                        {
+                          diag?<>
+                              <Dialog open={diag} onClose={()=>{
+                                setOpenDiag(false)
+                              }}>
+                                      <DialogContent>
+                                      <Row style={{marginLeft:"1.2rem"}}>
+                                          <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setButnVal("BTC")
+                                          setOpenDiag(false)
+                                        }}><img style={{width:"30px"}} src={logobtc}></img> BTC</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setButnVal("ETH")
+                                          setOpenDiag(false)
+                                        }}><img style={{width:"20px"}} src={eth}></img> ETH</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setButnVal("BNB")
+                                          setOpenDiag(false)
+                                        }} ><img style={{width:"30px"}} src={bnb}></img> BNB</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setButnVal("INRD")
+                                          setOpenDiag(false)
+                                        }}><img style={{width:"30px"}} src={ruppee}></img> INRD</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setButnVal("USDT")
+                                          setOpenDiag(false)
+                                        }}><img style={{width:"30px"}} src={usdt}></img> USDT</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem",borderRadius:"2rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setButnVal("ANTEAG")
+                                          setOpenDiag(false)
+                                        }}><img style={{width:"30px"}} src={logo}></img> ANTEAG</button>
+                                        </Col>
+                                        </Row>
+                                      </DialogContent>
+                              </Dialog>
+                           </>
+                           : null
+                        }
                         <Col>
-                      <Select style={{ background: "rgb(238,234,244)",  marginTop: "0.7rem", height: "1.7rem", width: "20%", position: "absolute" }} value={from} onChange={(e) => {
+                      
+                        <button className="from-btn btn btn-lg" style={{padding:"15px 30px",backgroundColor:"white",marginTop:"-2rem",borderRadius:"2rem 2rem",boxShadow:"rgb(0 0 0 / 8%) 0px 6px 10px",marginLeft:"3rem"}} onClick={()=>{
+                              setOpenDiag(true)
+                        }}>
+                         <img style={{width:"20px"}} src={butnval=="BTC"?logobtc:butnval=="ETH"?eth:butnval=="BNB"?bnb:butnval=="INRD"?ruppee:butnval=="USDT"?usdt:logo}></img> {butnval} 
+                        </button>
+                      {/* <Select  disableUnderline style={{ background: "rgb(247, 248, 250)", border:"2px 2px solid",  height: "1.7rem",position: "absolute" }} value={from} onChange={(e) => {
                         setfrom(e.target.value)
                       }}>
                         <MenuItem value={"BTC"}  >BTC</MenuItem>
@@ -6735,20 +6794,76 @@ else{
                         <MenuItem value={"BNB"}>BNB</MenuItem>
                         <MenuItem value={"USDT"}>USDT</MenuItem>
                         <MenuItem value={"ANTEAG"}>ANTEAG</MenuItem>
-                      </Select>
+                      </Select> */}
+                      
                       </Col>
                       </Row>
                     {/* <CgArrowsExchangeV size={40} style={{ marginLeft: "50%", marginBottom: "1rem" }}></CgArrowsExchangeV> */}
-
-                    
-                      <Label style={{ color: "black", padding: "0.3rem", width: "99%" }}>To</Label>
+                          </div>
+                          <Label style={{ color: "black", padding: "0.3rem", width: "99%" }}>To</Label>
+                    <div className="input-swap">
+                      
                       <Row>
                         <Col>
                       
-                      <Input disabled="true" placeholder={`You will Recieve ${final}`} style={{ underlineColorAndroid: "transparent", height: "1.5rem", width: "100%", background: "rgb(238,234,244)", marginTop: "1rem", paddingTop: "0.5rem", marginLeft: "0.2rem" }}></Input>
+                      <input className="inp-swap" style={{paddingTop:"1.5rem",paddingBottom:"1.5rem",paddingRight:"2rem"}} disabled="true" placeholder={`Recieve ${final.toFixed(4)}`} ></input>
                         </Col>
+                        {
+                          todiag?<>
+                          <Dialog open={todiag} onClose={()=>{
+                                setToDiag(false)
+                              }}>
+                                      <DialogContent>
+                                      <Row style={{marginLeft:"1.2rem"}}>
+                                          <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setto("BTC")
+                                          settocurr(liveprice_BTC)
+                                          setToDiag(false)
+                                        }}><img style={{width:"30px"}} src={logobtc}></img> BTC</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setto("ETH")
+                                          settocurr(liveprice_ETH)
+                                          setToDiag(false)
+                                        }}><img style={{width:"20px"}} src={eth}></img> ETH</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setto("BNB")
+                                          settocurr(liveprice_BNB)
+                                          setToDiag(false)
+                                        }} ><img style={{width:"30px"}} src={bnb}></img> BNB</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setto("INRD")
+                                          settocurr(liveusd)
+                                          setToDiag(false)
+                                        }}><img style={{width:"30px"}} src={ruppee}></img> INRD</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setto("USDT")
+                                          settocurr(1)
+                                          setToDiag(false)
+                                        }}><img style={{width:"30px"}} src={usdt}></img> USDT</button>
+                                        </Col>
+                                        <Col className="col-md-4 col-lg-4 " style={{marginBottom:"0.8rem",borderRadius:"2rem"}}>
+                                        <button  style={{marginRight:"0.3rem",borderRadius:"2rem"}} className="btn btn-outline-dark" onClick={()=>{
+                                          setto("ANTEAG")
+                                          settocurr(liveprice_BTC)
+                                          setToDiag(false)
+                                        }}><img style={{width:"30px"}} src={logo}></img> ANTEAG</button>
+                                        </Col>
+                                        </Row>
+                                      </DialogContent>
+                              </Dialog>
+                          </>: null
+                        }
                         <Col>
-                      <Select style={{ background: "rgb(238,234,244)", marginTop: "0.7rem", height: "1.7rem", width: "20%", position: "absolute" }} value={to} onChange={(e) => {
+                      {/* <Select style={{ background: "rgb(238,234,244)", marginTop: "0.7rem", height: "1.7rem", width: "20%", position: "absolute" }} value={to} onChange={(e) => {
                         setto(e.target.value)
                         switch (e.target.value) {
                           case 'ETH':
@@ -6773,22 +6888,28 @@ else{
                         <MenuItem value={"BNB"} >BNB</MenuItem>
                         <MenuItem value={"USDT"} >USDT</MenuItem>
                         <MenuItem value={"ANTEAG"} >ANTEAG</MenuItem>
-                      </Select>
+                      </Select> */}
+
+                      <button className="btn btn-lg " style={{padding:"15px 30px",backgroundColor:"white",borderRadius:"2rem 2rem",boxShadow:"rgb(0 0 0 / 8%) 0px 6px 10px",marginTop:"0.8rem",marginLeft:"3rem"}} value={to} onClick={()=>{
+                         setToDiag(true)
+                      }}>
+                       <img style={{width:"20px"}} src={to=="BTC"?logobtc:to=="ETH"?eth:to=="BNB"?bnb:to=="INRD"?ruppee:to=="USDT"?usdt:logo}></img> {to}</button>
                       </Col>
                       </Row>
-                    </div>
-                    <Button className="btn btn-primary m-6" style={{ marginTop: "3rem", width: "100%" }} disabled={!valid1} onClick={() => {
-                      if (from.length != 0 || to.length != 0) {
-                        if (from.length < localStorage.getItem(`${from}_Coins`) || to.length < localStorage.getItem(`${to}_Coins`)) {
-                          const temp =parseFloat(localStorage.getItem(`${from}_Coins`))-parseFloat(fromvalue);
-                          const temp1 = parseFloat(localStorage.getItem(`${to}_Coins`))+parseFloat(final)
+                      </div>
+                    
+                    <button className="btn  m-6" style={{ marginBottom:"1rem",marginTop: "2rem", width: "100%",paddingTop:"1.7rem",paddingBottom:"1.7rem",borderRadius:"2rem 2rem ",backgroundColor:"#FDEFEF",color:"black" }} disabled={!valid1} onClick={() => {
+                      if (butnval.length != 0 || to.length != 0) {
+                        if (butnval.length < localStorage.getItem(`${butnval}_Coins`) || to.length < localStorage.getItem(`${to}_Coins`)) {
+                          const temp =parseFloat(localStorage.getItem(`${butnval}_Coins`))-parseFloat(fromvalue);
+                          const temp1 = parseFloat(localStorage.getItem(`${to}_Coins`))+parseFloat(final.toFixed(4))
                           alert(`${to}_Coins`,localStorage.getItem(`${to}_Coins`))
                           alert(to)
-                          alert(localStorage.getItem(`${from}_Coins`))
+                          alert(localStorage.getItem(`${butnval}_Coins`))
                           alert(tocurr)
                          
                           axios({
-                            url : `https://api.anteagle.tech/get${from.toLowerCase()}?coins=${temp}&userid=${localStorage.getItem("userid")}`,
+                            url : `https://api.anteagle.tech/get${butnval.toLowerCase()}?coins=${temp}&userid=${localStorage.getItem("userid")}`,
                             method : "POST",
                             headers:{
                               "Accept" : "Application/json",
@@ -6810,13 +6931,13 @@ else{
                           
                         }
                       }
-                    }}>Convert</Button>
+                    }}>CONVERT</button>
                  
 
-                </Card>
+                
 
               </CardBody>
-            </Card>
+            
           </Col>
         </Row>
     
