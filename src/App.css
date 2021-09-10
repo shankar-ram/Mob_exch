@@ -298,4 +298,55 @@ html {
   padding-right:2rem;
 }
 
+
+.main-card{
+  padding-top:1rem;
+  padding-bottom: 1rem;
+  margin-left:-0.5rem;
+  border-radius: 20px;
+}
+ .card {
+  
+  width: 110%;
+  margin-left: -1rem;
+  padding: 0.8rem 0;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  margin-bottom:0.7rem;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+
+
+.card-5 {
+  
  
+  background: rgb(0,95,255);
+  background: linear-gradient(90deg, rgba(0,95,255,1) 0%, rgba(0,95,255,1) 5%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 100%);
+  
+}
+
+.card__title{
+  margin-top:0.5rem;
+}
+.card__title img{
+  margin-left: 1.5rem;
+  height:30px;
+}
+
+.price{
+  float:"right"
+}
+
+.price .leaderboard__value{
+    margin-left: 1.6rem;
+}
+
+.leaderboard__value1{
+  float:right;
+  margin-right:8px;
+}

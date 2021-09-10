@@ -261,6 +261,7 @@ function App() {
       
     }
   })
+  const [isDark,setDark]=React.useState(false)
   const [todiag,setToDiag]=React.useState(false)
   const [diag, setOpenDiag]=React.useState(false)
   const [isDropdownOpend , setDropdownOpenn ] = React.useState(false);
@@ -3731,8 +3732,8 @@ if(i==1){
 // printEthereumChart()
   return ( 
     
-     <body >
-    <div className="content" style={{marginLeft:"0.8rem"}}>
+     <body style={{backgroundColor:isDark?"black":"white"}}>
+    <div className="content" >
       {loadin_cont ? <LoadDashMobile /> : 
 //         <>
 
@@ -3995,16 +3996,17 @@ anteagle_pro ?
 
 <Col>
 
-<CardText style={{fontSize:"1.2rem"}}><img src={logo} style={{width:"60px"}}></img> AntEagle Lite</CardText>
-
+<CardText style={{fontSize:"1.5rem",fontWeight:"500",color:isDark? "white":"black"}}><img src={logo} style={{width:"60px"}}></img> AntEagle <br/><p style={{fontSize:"1rem",marginLeft:"4rem",marginTop:"-1.5rem"}}>Lite</p></CardText>
 
 </Col>
 
-<Col >
-  {/* <CardText style={{fontSize:"1rem",marginLeft:"-2rem"}}>Currency Type : {mobileswitch1 ? 'USDT' : 'INRD'}</CardText>
+
+
+<Col style={{textAlign:"center"}}>
+   <CardText style={{fontSize:"1rem",marginTop:"1rem",color:isDark? "white":"black"}}> Dark Mode </CardText>
 <Switch onChange={(e)=>{
-setmobileswitch1(e)
-}} checked={mobileswitch1} checkedIcon={false} uncheckedIcon={false}/> */}
+setDark(!isDark)
+}} checked={isDark} checkedIcon={false} uncheckedIcon={false}/> 
 
 
 
@@ -4217,12 +4219,13 @@ setmobile_port(false)
 
 </DialogContent>
 </Dialog>
-<div class="tabs" style={{width:"95%",marginLeft:"5px",paddingBottom:"0.6rem",marginBottom:"0.7rem"}}>
+<div class="tabs" style={{width:"95%",marginLeft:"5px",paddingBottom:"0.6rem",marginBottom:"0.7rem",background:" rgb(0,95,255)",
+background:" linear-gradient(90deg,rgba(0,95,255,1) 0%, rgba(255,255,255,1) 4%, rgba(255,255,255,1) 96%,rgba(0,95,255,1) 100%)",borderRadius:"12px"}}>
 
 
 
 
-<CardTitle style={{textAlign:"center",fontSize:"1rem",paddingTop:"1rem",marginTop:"0.7rem",marginRight:"0.5rem"}} onClick={()=>{
+<CardTitle style={{fontWeight:"600",textAlign:"center",fontSize:"1.2rem",paddingTop:"1rem",marginTop:"0.7rem",marginRight:"0.5rem"}} onClick={()=>{
    
   setmobile_port(true)
   setport(true)
@@ -4232,16 +4235,15 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
   </span>
 </CardTitle>
 
-</div>
-<div class="tabs" style={{width:"95%",marginLeft:"5px",paddingBottom:"0.6rem",textAlign:"center"}}>
+
 <span>
-<CardText style={{fontSize:"1rem",marginRight:"1.2rem"}}>
-<span style={{marginLeft:"1rem"}}>
+<CardText style={{fontSize:"1.2rem",fontWeight:"500",marginRight:"1.2rem"}}>
+<span style={{marginLeft:"1.5rem"}}>
 <span style={{color:"green", fontWeight:"bold"}}>₹</span> {"   "}<span>INRD : </span><span style={{color:"green"}}>{localStorage.getItem("INRD_Coins")}</span>
  </span> 
  <br/>
 
-<span style={{marginLeft:"0rem"}}>
+<span style={{marginLeft:"1.5rem"}}>
 <span style={{color:"green", fontWeight:"bold"}}>$</span> {"   "}<span >USDT : </span><span style={{color:"green"}}>{localStorage.getItem("USDT_Coins")}</span>
 </span>
 
@@ -4252,34 +4254,39 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
 
 
 
+
+
+
 </div>
+
 </div>
-<div class="tabs" style={{marginLeft:"15px",width:"90%",paddingTop:'20px',marginTop:"0.8rem",paddingBottom:"0.8rem"}}> 
-<CardText style={{fontSize:"1rem",marginTop:".4rem",textAlign:"center"}} >TRADING CURRENCY </CardText>
+<div  style={{marginLeft:"15px",width:"90%",paddingTop:'20px',marginTop:"0.8rem",paddingBottom:"0.8rem",borderRadius:"none"}}> 
+<CardText style={{fontSize:"1.1rem",marginTop:".4rem",textAlign:"center",fontWeight:"500",color:isDark? "white":"black"}} >TRADING CURRENCY </CardText>
 <div class="switch" style={{marginTop:"-0.7rem",textAlign:"center"}} >
   <input type="checkbox" onChange={()=>{
     setmobileswitch1(!mobileswitch1)
-  }}/>
-   <label > <i >INRD/USDT</i></label>
+  }}/> <label style={{color:isDark? "white":"black"}} > <i > INRD/USDT</i></label>
 </div> 
 <article class="leaderboard" style={{textAlign:"left"}}>
 
-<main class="leaderboard__profiles" style={{marginLeft:"1rem"}}>
-<Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}} > 
-  <article class="leaderboard__profile" >
-    <img src={logobtc} style={{height:"30px",marginLeft:"8px"}} alt="Mark Zuckerberg" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  style={{color:"black"}}  onClick={()=>{
+<main class="leaderboard__profiles" style={{margin:"1rem 1rem" }}>
+ 
+  
+   <div class="card card-5" style={{borderRadius:"15px"}} >
+      
+      
+      <span onClick={()=>{
     setopen_btc(true)
       seti(1)
-  }}> Bitcoin(BTC) - </span>
-  
-    <span  class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value" style={{marginRight:"8px",float:"right",color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}> {BTC_per}%</span></span>
-    <Dialog style={{textAlign:"center"}} open={open_btc} onClose={()=>{setopen_btc(false)}}>
+  }}> <h4 class="card__title"><img src={logobtc}  alt="Mark Zuckerberg" /> Bitcoin(BTC) </h4></span>
+      
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}> {BTC_per}%</span></span></h5>
+      <Dialog  open={open_btc} onClose={()=>{setopen_btc(false)}}>
    
     <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}>{BTC_per}%</span></span><br/>
+                 <img src={logobtc} width="12%"/> 
+      <span  style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_BTC : (parseFloat(liveprice_BTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(BTC_per) >0 ? 'green' : 'red'}}>{BTC_per}%</span></span><br/>
       <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BTC}></canvas>
       <span style={{marginLeft:"1.4rem"}}>
       <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
@@ -4300,851 +4307,953 @@ TOTAL PORTFOLIO : <span style={{color : "green"}}>
       
     </DialogContent>
     </Dialog>
+    </div> 
 
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={eth}  style={{height:"30px",marginLeft:"8px"}} alt="Ethereum" class="leaderboard__picture"/>
+    <div class="card card-5" style={{borderRadius:"15px"}} > 
     <span class="leaderboard__name"  onClick={()=>{
    
-    setopen_eth(true)
-    seti(1)
-  }}> Ethereum(ETH) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{marginRight:"8px",float:"right",color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}>{ETH_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_eth} onClose={()=>{setopen_eth(false)}}>
-   
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
-
-                  <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}>{ETH_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ETH}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ETH/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ETH/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={bnb} style={{height:"30px",marginLeft:"8px"}} alt="Elizabeth Holmes" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  onClick={()=>{
-    setopen_BNB(true)
-    seti(1)
-  }}> Binance(BNB) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{marginRight:"8px",float:"right",color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}>{BNB_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_BNB} onClose={()=>{setopen_BNB(false)}}>
-   
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
-
-                  <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/bnb.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}>{BNB_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))
-        setlive(g)
-        setpair(`BNB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))
-        setlive(g)
-        setpair(`BNB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={link} style={{height:"30px",marginLeft:"8px"}} alt="Chainlink (LINK)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  onClick={()=>{
-      setopen_LINK(true)
-      seti(1)
-    }}> Chainlink(LINK) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{marginRight:"8px",float:"right",color :parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{LINK_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_LINK} onClose={()=>{setopen_LINK(false)}}>
-   
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
-
-                  <img src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/link.svg" width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red'}}>{LINK_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_LINK}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))
-        setlive(g)
-        setpair(`LINK/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))
-        setlive(g)
-        setpair(`LINK/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card  className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={luna} style={{height:"30px",marginLeft:"8px"}} alt="Terra (LUNA)" class="leaderboard__picture"/>
-    <span class="leaderboard__name" onClick={()=>{
-      setopen_LUNA(true)
+   setopen_eth(true)
    seti(1)
-    }}>Terra(LUNA) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}>{LUNA_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_LUNA} onClose={()=>{setopen_LUNA(false)}}>
+ }}> <h4 class="card__title"><img src={eth}  alt="Mark Zuckerberg" /> Ethereum (ETH) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}> {ETH_per}%</span></span></h5>
+     
+      <Dialog  open={open_eth} onClose={()=>{setopen_eth(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={luna} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}>{LUNA_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_LUNA}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`LUNA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`LUNA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={eth} width="8%"/> 
+     <span  style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(ETH_per) >0 ? 'green' : 'red'}}>{ETH_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ETH}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ETH/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={theta} style={{height:"30px"}} alt="THETA (THETA)" class="leaderboard__picture"/>
-    <span class="leaderboard__name" onClick={()=>{
-setopen_THETA(true)
-     seti(1)
-    }}> THETA(THETA) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{THETA_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_THETA} onClose={()=>{setopen_THETA(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ETH : (parseFloat(liveprice_ETH*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ETH/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+    </div> 
+    
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_BNB(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={bnb}  alt="Mark Zuckerberg" /> Binance (BNB) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}> {BNB_per}%</span></span></h5>
 
-                  <img src={theta} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{THETA_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_THETA}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`THETA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`THETA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={grt} style={{height:"30px",marginLeft:"8px"}} alt="Graph (GRT)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  onClick={()=>{
-setopen_GRT(true)
-     seti(1)
-    }}>Graph (GRT) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}>{GRT_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_GRT} onClose={()=>{setopen_GRT(false)}}>
+      <Dialog  open={open_BNB} onClose={()=>{setopen_BNB(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={grt} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}>{GRT_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_GRT}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))
-        setlive(g)
-        setpair(`GRT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))
-        setlive(g)
-        setpair(`GRT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={bnb} width="12%"/> 
+     <span  style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(BNB_per) >0 ? 'green' : 'red'}}>{BNB_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_BNB: (parseFloat(liveprice_BNB*conversion).toFixed(2))
+       setlive(g)
+       setpair(`BNB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card  className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={tfuel} style={{height:"30px",marginLeft:"8px"}} alt="BNBa Fuel(TFUEL)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  onClick={()=>{
-setopen_TFUEL(true)
-      seti(1)
-    }}> Thetha Fuel(TFUEL) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}>{TFUEL_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_TFUEL} onClose={()=>{setopen_TFUEL(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_BNB : (parseFloat(liveprice_BNB*conversion).toFixed(2))
+       setlive(g)
+       setpair(`BNB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+    </div>
+
+   <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_LINK(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={link}  alt="Mark Zuckerberg" /> Chainlink (LINK) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red'}}> {LINK_per}%</span></span></h5>
 
-                  <img src={tfuel} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}>{TFUEL_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_TFUEL}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))
-        setlive(g)
-        setpair(`TFUEL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))
-        setlive(g)
-        setpair(`TFUEL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={ksm} style={{height:"30px",marginLeft:"8px"}} alt="Kusuma (KSM)" class="leaderboard__picture"/>
-    <span class="leaderboard__name" onClick={()=>{
-setopen_KSM(true)
-seti(1)
-    }}> Kusuma(KSM) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}>{KSM_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_KSM} onClose={()=>{setopen_KSM(false)}}>
+      <Dialog  open={open_LINK} onClose={()=>{setopen_LINK(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={ksm} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}>{KSM_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_KSM}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))
-        setlive(g)
-        setpair(`KSM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))
-        setlive(g)
-        setpair(`KSM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={link} width="12%"/> 
+     <span  style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(LINK_per) >0 ? 'green' : 'red'}}>{LINK_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_LINK: (parseFloat(liveprice_LINK*conversion).toFixed(2))
+       setlive(g)
+       setpair(`LINK/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card  className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={ada} style={{height:"30px",marginLeft:"8px"}} alt="Cardano (ADA)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_ADA(true)
-     seti(1)
-    }}> Cardano(ADA) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}>{ADA_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_ADA} onClose={()=>{setopen_ADA(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_LINK : (parseFloat(liveprice_LINK*conversion).toFixed(2))
+       setlive(g)
+       setpair(`LINK/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_LUNA(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={luna}  alt="Mark Zuckerberg" /> Terra (LUNA) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}> {LUNA_per}%</span></span></h5>
 
-                  <img src={ada} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}>{ADA_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ADA}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ADA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ADA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={vet} style={{height:"30px",marginLeft:"8px"}} alt="VeChain (VET)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_VET(true)
-     seti(1)
-    }}> VeChain(VET) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(VET_per) >0 ? 'green' : 'red'}}>{VET_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_VET} onClose={()=>{setopen_VET(false)}}>
+      <Dialog  open={open_LUNA} onClose={()=>{setopen_LUNA(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={vet} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red'}}>{VET_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_VET}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))
-        setlive(g)
-        setpair(`VET/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg"  style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))
-        setlive(g)
-        setpair(`VET/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={luna} width="12%"/> 
+     <span  style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(LUNA_per) >0 ? 'green' : 'red'}}>{LUNA_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_LUNA: (parseFloat(liveprice_LUNA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`LUNA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={dot} style={{height:"30px",marginLeft:"8px"}} alt="Polkadot (DOT)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_DOT(true)
-     seti(1)
-    }}> Polkadot(DOT) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}>{DOT_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_DOT} onClose={()=>{setopen_DOT(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_LUNA : (parseFloat(liveprice_LUNA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`LUNA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_THETA(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={theta}  alt="Mark Zuckerberg" /> THETA (THETA) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}> {THETA_per}%</span></span></h5>
 
-                  <img src={dot} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}>{DOT_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_DOT}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))
-        setlive(g)
-        setpair(`DOT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))
-        setlive(g)
-        setpair(`DOT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={uni} style={{height:"30px",marginLeft:"8px"}} alt="Uniswap (UNI)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_UNI(true)
-      seti(1)
-    }}> Uniswap(UNI) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}>{UNI_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_UNI} onClose={()=>{setopen_UNI(false)}}>
+      <Dialog  open={open_THETA} onClose={()=>{setopen_THETA(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={uni} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}>{UNI_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_UNI}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))
-        setlive(g)
-        setpair(`UNI/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))
-        setlive(g)
-        setpair(`UNI/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={theta} width="12%"/> 
+     <span  style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(THETA_per) >0 ? 'green' : 'red'}}>{THETA_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_THETA: (parseFloat(liveprice_THETA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`THETA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={rune} style={{height:"30px",marginLeft:"8px"}} alt="THORChain (RUNE)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_RUNE(true)
-      seti(1)
-    }}> THORChain(RUNE) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}>{RUNE_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_RUNE} onClose={()=>{setopen_RUNE(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_THETA : (parseFloat(liveprice_THETA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`THETA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_GRT(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={grt}  alt="Mark Zuckerberg" /> GRAPH (GRT) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}> {GRT_per}%</span></span></h5>
 
-                  <img src={rune} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}>{RUNE_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_RUNE}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))
-        setlive(g)
-        setpair(`RUNE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))
-        setlive(g)
-        setpair(`RUNE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={sol} style={{height:"30px",marginLeft:"8px"}} alt="SOLANA (SOL)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_SOL(true)
-      seti(1)
-    }}> SOLANA(SOL) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}>{SOL_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_SOL} onClose={()=>{setopen_SOL(false)}}>
+      <Dialog  open={open_GRT} onClose={()=>{setopen_GRT(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={sol} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}>{SOL_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_SOL}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))
-        setlive(g)
-        setpair(`SOL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))
-        setlive(g)
-        setpair(`SOL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={grt} width="12%"/> 
+     <span  style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(GRT_per) >0 ? 'green' : 'red'}}>{GRT_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_GRT: (parseFloat(liveprice_GRT*conversion).toFixed(2))
+       setlive(g)
+       setpair(`GRT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile" >
-    <img src={ftt} style={{height:"30px",marginLeft:"8px"}} alt="FTX (FTT)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_FTT(true)
-      seti(1)
-    }}> FTX(FTT) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}>{FTT_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_FTT} onClose={()=>{setopen_FTT(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_GRT : (parseFloat(liveprice_GRT*conversion).toFixed(2))
+       setlive(g)
+       setpair(`GRT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div> 
+
+      <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_TFUEL(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={tfuel}  alt="Mark Zuckerberg" /> THETA FUEL (TFUEL) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}> {TFUEL_per}%</span></span></h5>
 
-                  <img src={ftt} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}>{FTT_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_FTT}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))
-        setlive(g)
-        setpair(`FTT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))
-        setlive(g)
-        setpair(`FTT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={axs} style={{height:"30px",marginLeft:"8px"}} alt="Axie Infinity (AXS)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_AXS(true)
-seti(1)
-    }}> Axie Infinity(AXS) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}>{AXS_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_AXS} onClose={()=>{setopen_AXS(false)}}>
+      <Dialog  open={open_TFUEL} onClose={()=>{setopen_TFUEL(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={axs} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}>{AXS_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_AXS}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))
-        setlive(g)
-        setpair(`AXS/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))
-        setlive(g)
-        setpair(`AXS/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={tfuel} width="12%"/> 
+     <span  style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(TFUEL_per) >0 ? 'green' : 'red'}}>{TFUEL_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_TFUEL: (parseFloat(liveprice_TFUEL*conversion).toFixed(2))
+       setlive(g)
+       setpair(`TFUEL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={matic} style={{height:"30px",marginLeft:"8px"}} alt="Polygon (MATIC)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_MATIC(true)
-      seti(1)
-    }}> Polygon(MATIC) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}>{MATIC_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_MATIC} onClose={()=>{setopen_MATIC(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_TFUEL : (parseFloat(liveprice_TFUEL*conversion).toFixed(2))
+       setlive(g)
+       setpair(`TFUEL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+     
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_KSM(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={ksm}  alt="Mark Zuckerberg" /> KUSAMA (KSM) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}> {KSM_per}%</span></span></h5>
 
-                  <img src={matic} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}>{MATIC_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_MATIC}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))
-        setlive(g)
-        setpair(`MATIC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))
-        setlive(g)
-        setpair(`MATIC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={gtc} style={{height:"30px",marginLeft:"8px"}} alt="Gitcoin (GTC)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  onClick={()=>{
-setopen_GTC(true)
-  seti(1)
-    }}> Gitcoin(GTC) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}>{GTC_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_GTC} onClose={()=>{setopen_GTC(false)}}>
+      <Dialog  open={open_KSM} onClose={()=>{setopen_KSM(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={gtc} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}>{GTC_per}%</span></span><br/>
-      {/* <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_GTC}></canvas> */}
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))
-        setlive(g)
-        setpair(`GTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))
-        setlive(g)
-        setpair(`GTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={ksm} width="12%"/> 
+     <span  style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(KSM_per) >0 ? 'green' : 'red'}}>{KSM_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_KSM: (parseFloat(liveprice_KSM*conversion).toFixed(2))
+       setlive(g)
+       setpair(`KSM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={alice} style={{height:"30px",marginLeft:"8px"}} alt="Alice (ALICE)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_ALICE(true)
-      seti(1)
-    }}> Alice(ALICE) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}>{ALICE_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_ALICE} onClose={()=>{setopen_ALICE(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_KSM : (parseFloat(liveprice_KSM*conversion).toFixed(2))
+       setlive(g)
+       setpair(`KSM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_ADA(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={ada}  alt="Mark Zuckerberg" /> Cardano (ADA) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}> {ADA_per}%</span></span></h5>
 
-                  <img src={alice} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}>{ALICE_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ALICE}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ALICE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ALICE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={fil} style={{height:"30px",marginLeft:"8px"}} alt="FileCoin (FIL)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_FIL(true)
-      seti(1)
-    }}> FileCoin(FIL) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}>{FIL_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_FIL} onClose={()=>{setopen_FIL(false)}}>
+      <Dialog  open={open_ADA} onClose={()=>{setopen_ADA(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={fil} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}>{FIL_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_FIL}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))
-        setlive(g)
-        setpair(`FIL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))
-        setlive(g)
-        setpair(`FIL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={ada} width="12%"/> 
+     <span  style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(ADA_per) >0 ? 'green' : 'red'}}>{ADA_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ADA: (parseFloat(liveprice_ADA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ADA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card  className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={ftm} style={{height:"30px",marginLeft:"8px"}} alt="Fantom (FTM)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_FTM(true)
-      seti(1)
-    }}> Fantom(FTM) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}>{FTM_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_FTM} onClose={()=>{setopen_FTM(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ADA : (parseFloat(liveprice_ADA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ADA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_VET(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={vet}  alt="Mark Zuckerberg" /> VeChain (VET) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(VET_per) >0 ? 'green' : 'red'}}> {VET_per}%</span></span></h5>
 
-                  <img src={ftm} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}>{FTM_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_FTM}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))
-        setlive(g)
-        setpair(`FTM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))
-        setlive(g)
-        setpair(`FTM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card  className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={dgb} style={{height:"30px",marginLeft:"8px"}} alt="DigiByte (DGB)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-setopen_DGB(true)
-      seti(1)
-    }}> DigiByte(DGB) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}>{DGB_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_DGB} onClose={()=>{setopen_DGB(false)}}>
+      <Dialog  open={open_VET} onClose={()=>{setopen_VET(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-                  <img src={dgb} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}>{DGB_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_DGB}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))
-        setlive(g)
-        setpair(`DGB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))
-        setlive(g)
-        setpair(`DGB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={vet} width="12%"/> 
+     <span  style={{color : parseFloat(VET_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(VET_per) >0 ? 'green' : 'red'}}>{VET_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_VET: (parseFloat(liveprice_VET*conversion).toFixed(2))
+       setlive(g)
+       setpair(`VET/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={mana} style={{height:"30px",marginLeft:"8px"}} alt="Decentraland (MANA)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"   onClick={()=>{
-      setopen_MANA(true)
-     seti(1)
-    }}> Decentraland(MANA) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}>{MANA_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_MANA} onClose={()=>{setopen_MANA(false)}}>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_VET : (parseFloat(liveprice_VET*conversion).toFixed(2))
+       setlive(g)
+       setpair(`VET/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   setopen_DOT(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={dot}  alt="Mark Zuckerberg" /> Polkadot (DOT) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}> {DOT_per}%</span></span></h5>
 
-                  <img src={mana} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}>{MANA_per}%</span></span><br/>
-      <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_MANA}></canvas>
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`MANA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`MANA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
-      
-    </DialogContent>
-    </Dialog>
-  </article>
-  </Card>
-  <Card className="coin-card"  style={{marginLeft:"-10px",boxShadow:"4px 4px #C4B6B6",backgroundColor:"#F3F1F5",borderRadius:"7px",width:"100%",marginBottom:"0.7rem",padding:"20px 0 ",marginTop:"0.7rem"}}>
-  <article class="leaderboard__profile">
-    <img src={ata} style={{height:"30px",marginLeft:"8px"}} alt="Automata (ATA)" class="leaderboard__picture"/>
-    <span class="leaderboard__name"  onClick={()=>{
-      setopen_ATA(true)
-      seti(1)
-    }}>Automata (ATA) - </span>
-    <span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span><span class="leaderboard__value" style={{float:"right",marginRight:"8px",color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}>{ATA_per}%</span></span>
-    <Dialog  style={{textAlign:"center"}} open={open_ATA} onClose={()=>{setopen_ATA(false)}}>
+      <Dialog  open={open_DOT} onClose={()=>{setopen_DOT(false)}}>
    
-    <DialogContent style={{paddingBottom:"1.2rem"}}>
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
 
-      <img src={ata} width="15%"/> 
-      <span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red', fontSize:"2rem" }}> {mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}>{mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<br/><span class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}>{ATA_per}%</span></span><br/>
-       {/* <canvas style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_ATA}></canvas>  */}
-      <span style={{marginLeft:"1.4rem"}}>
-      <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ATA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_buy(true)
-
-      }} >Buy</Button>
-      <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
-        const g = mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))
-        setlive(g)
-        setpair(`ATA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
-        setshow_sell(true)
-      }}>Sell</Button>
-      </span>
+                <img src={dot} width="12%"/> 
+     <span  style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(DOT_per) >0 ? 'green' : 'red'}}>{DOT_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_DOT: (parseFloat(liveprice_DOT*conversion).toFixed(2))
+       setlive(g)
+       setpair(`DOT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
       
-    </DialogContent>
-    </Dialog>
-  </article>
-</Card>
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_DOT : (parseFloat(liveprice_DOT*conversion).toFixed(2))
+       setlive(g)
+       setpair(`DOT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_UNI(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={uni}  alt="Mark Zuckerberg" /> Uniswap (UNI) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}> {UNI_per}%</span></span></h5>
+
+      <Dialog  open={open_UNI} onClose={()=>{setopen_UNI(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={uni} width="12%"/> 
+     <span  style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(UNI_per) >0 ? 'green' : 'red'}}>{UNI_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_UNI: (parseFloat(liveprice_UNI*conversion).toFixed(2))
+       setlive(g)
+       setpair(`UNI/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_UNI : (parseFloat(liveprice_UNI*conversion).toFixed(2))
+       setlive(g)
+       setpair(`UNI/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_RUNE(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={rune}  alt="Mark Zuckerberg" /> THORChain (RUNE) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}> {RUNE_per}%</span></span></h5>
+
+      <Dialog  open={open_RUNE} onClose={()=>{setopen_RUNE(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={rune} width="12%"/> 
+     <span  style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(RUNE_per) >0 ? 'green' : 'red'}}>{RUNE_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_RUNE: (parseFloat(liveprice_RUNE*conversion).toFixed(2))
+       setlive(g)
+       setpair(`RUNE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_RUNE : (parseFloat(liveprice_RUNE*conversion).toFixed(2))
+       setlive(g)
+       setpair(`RUNE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_SOL(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={sol}  alt="Mark Zuckerberg" /> SOLANA (SOL) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}> {SOL_per}%</span></span></h5>
+
+      <Dialog  open={open_SOL} onClose={()=>{setopen_SOL(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={sol} width="12%"/> 
+     <span  style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(SOL_per) >0 ? 'green' : 'red'}}>{SOL_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_SOL: (parseFloat(liveprice_SOL*conversion).toFixed(2))
+       setlive(g)
+       setpair(`SOL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_SOL : (parseFloat(liveprice_SOL*conversion).toFixed(2))
+       setlive(g)
+       setpair(`SOL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_FTT(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={ftt}  alt="Mark Zuckerberg" /> FTX (FTT) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}> {FTT_per}%</span></span></h5>
+
+      <Dialog  open={open_FTT} onClose={()=>{setopen_FTT(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={ftt} width="12%"/> 
+     <span  style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(FTT_per) >0 ? 'green' : 'red'}}>{FTT_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_FTT: (parseFloat(liveprice_FTT*conversion).toFixed(2))
+       setlive(g)
+       setpair(`FTT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_FTT : (parseFloat(liveprice_FTT*conversion).toFixed(2))
+       setlive(g)
+       setpair(`FTT/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_AXS(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={axs}  alt="Mark Zuckerberg" /> Axie Infinity (AXS) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}> {AXS_per}%</span></span></h5>
+
+      <Dialog  open={open_AXS} onClose={()=>{setopen_AXS(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={axs} width="12%"/> 
+     <span  style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(AXS_per) >0 ? 'green' : 'red'}}>{AXS_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_AXS: (parseFloat(liveprice_AXS*conversion).toFixed(2))
+       setlive(g)
+       setpair(`AXS/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_AXS : (parseFloat(liveprice_AXS*conversion).toFixed(2))
+       setlive(g)
+       setpair(`AXS/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_MATIC(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={matic}  alt="Mark Zuckerberg" /> Polygon (MATIC) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}> {MATIC_per}%</span></span></h5>
+
+      <Dialog  open={open_MATIC} onClose={()=>{setopen_MATIC(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={matic} width="12%"/> 
+     <span  style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(MATIC_per) >0 ? 'green' : 'red'}}>{MATIC_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_MATIC: (parseFloat(liveprice_MATIC*conversion).toFixed(2))
+       setlive(g)
+       setpair(`MATIC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_MATIC : (parseFloat(liveprice_MATIC*conversion).toFixed(2))
+       setlive(g)
+       setpair(`MATIC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_GTC(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={gtc}  alt="Mark Zuckerberg" /> GITCOIN (GTC) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}> {GTC_per}%</span></span></h5>
+
+      <Dialog  open={open_GTC} onClose={()=>{setopen_GTC(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={gtc} width="12%"/> 
+     <span  style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(GTC_per) >0 ? 'green' : 'red'}}>{GTC_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_GTC: (parseFloat(liveprice_GTC*conversion).toFixed(2))
+       setlive(g)
+       setpair(`GTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_GTC : (parseFloat(liveprice_GTC*conversion).toFixed(2))
+       setlive(g)
+       setpair(`GTC/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_FIL(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={fil}  alt="Mark Zuckerberg" /> FileCoin (FIL) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}> {FIL_per}%</span></span></h5>
+
+      <Dialog  open={open_FIL} onClose={()=>{setopen_FIL(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={fil} width="12%"/> 
+     <span  style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(FIL_per) >0 ? 'green' : 'red'}}>{FIL_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_FIL: (parseFloat(liveprice_FIL*conversion).toFixed(2))
+       setlive(g)
+       setpair(`FIL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_FIL : (parseFloat(liveprice_FIL*conversion).toFixed(2))
+       setlive(g)
+       setpair(`FIL/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_ALICE(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={alice}  alt="Mark Zuckerberg" /> Alice (ALICE) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}> {ALICE_per}%</span></span></h5>
+
+      <Dialog  open={open_ALICE} onClose={()=>{setopen_ALICE(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={alice} width="12%"/> 
+     <span  style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(ALICE_per) >0 ? 'green' : 'red'}}>{ALICE_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ALICE: (parseFloat(liveprice_ALICE*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ALICE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ALICE : (parseFloat(liveprice_ALICE*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ALICE/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_FTM(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={ftm}  alt="Mark Zuckerberg" /> Fantom (FTM) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}> {FTM_per}%</span></span></h5>
+
+      <Dialog  open={open_FTM} onClose={()=>{setopen_FTM(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={ftm} width="12%"/> 
+     <span  style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(FTM_per) >0 ? 'green' : 'red'}}>{FTM_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_FTM: (parseFloat(liveprice_FTM*conversion).toFixed(2))
+       setlive(g)
+       setpair(`FTM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_FTM : (parseFloat(liveprice_FTM*conversion).toFixed(2))
+       setlive(g)
+       setpair(`FTM/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_DGB(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={dgb}  alt="Mark Zuckerberg" /> DigiByte (DGB) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}> {DGB_per}%</span></span></h5>
+
+      <Dialog  open={open_DGB} onClose={()=>{setopen_DGB(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={dgb} width="12%"/> 
+     <span  style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(DGB_per) >0 ? 'green' : 'red'}}>{DGB_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_DGB: (parseFloat(liveprice_DGB*conversion).toFixed(2))
+       setlive(g)
+       setpair(`DGB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_DGB : (parseFloat(liveprice_DGB*conversion).toFixed(2))
+       setlive(g)
+       setpair(`DGB/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_MANA(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={mana}  alt="Mark Zuckerberg" /> Decentraland (MANA) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}> {MANA_per}%</span></span></h5>
+
+      <Dialog  open={open_MANA} onClose={()=>{setopen_MANA(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={mana} width="12%"/> 
+     <span  style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(MANA_per) >0 ? 'green' : 'red'}}>{MANA_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_MANA: (parseFloat(liveprice_MANA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`MANA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_MANA : (parseFloat(liveprice_MANA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`MANA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
+     <div class="card card-5" style={{borderRadius:"15px"}}>
+     <span class="leaderboard__name"  onClick={()=>{
+   
+   setopen_ATA(true)
+   seti(1)
+ }}> <h4 class="card__title"><img src={ata}  alt="Mark Zuckerberg" /> Automata (ATA) </h4></span>
+    
+      <h5 className="price"><span  class="leaderboard__value" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red' }}>{mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span> {mobileswitch1 ? 'USDT' : 'INRD'}</span> <span class="leaderboard__value1" style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}> {ATA_per}%</span></span></h5>
+
+      <Dialog  open={open_ATA} onClose={()=>{setopen_ATA(false)}}>
+   
+   <DialogContent style={{paddingBottom:"1.2rem"}}>
+
+                <img src={ata} width="12%"/> 
+     <span  style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red',fontSize:"1.5rem",fontWeight:"500"}}> {mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))}<span style={{fontSize: "1rem"}}> {mobileswitch1 ? 'USDT' : 'INRD'}</span>{"        "}<span className='leaderboard__value1' style={{color : parseFloat(ATA_per) >0 ? 'green' : 'red'}}>{ATA_per}%</span></span><br/>
+     <canvas style={{marginBottom:"0.8rem"}} style={{marginBottom:"0.8rem"}} id="btcChart" ref={refHandler_BNB}></canvas>
+     <span style={{marginLeft:"1.4rem"}}>
+     <Button  className="btn btn-success btn-lg" style={{float:"left"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ATA: (parseFloat(liveprice_ATA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ATA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       
+       setshow_buy(true)
+      
+     }} >Buy</Button>
+     <Button  className="btn btn-dark btn-lg" style={{float:"right"}} onClick={()=>{
+       const g = mobileswitch1 ? liveprice_ATA : (parseFloat(liveprice_ATA*conversion).toFixed(2))
+       setlive(g)
+       setpair(`ATA/${mobileswitch1 ? 'USDT' : 'INRD'}`)
+       setshow_sell(true)
+     }}>Sell</Button>
+     </span>
+     
+   </DialogContent>
+   </Dialog>
+
+
+     </div>
+
   </main>
+
+
 </article>
 </div>
 </>
